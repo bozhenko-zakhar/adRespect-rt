@@ -1,0 +1,109 @@
+@media (min-width: 320px) {
+	body {
+		overflow-x: hidden;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+button {
+	cursor: pointer;
+	padding: 0;
+}
+
+.header-page {
+
+}
+
+.container {}
+
+.header-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 24px 89px;
+}
+
+.logo {
+	display: flex;
+}
+
+.logo-icon {
+	width: 114px;
+	height: 19px;
+}
+
+.header-nav-items {
+	display: flex;
+	gap: 48px;
+}
+
+.header-nav-links {
+	display: flex;
+	align-items: center;
+	gap: 48px;
+}
+
+.header-nav-item {}
+
+.header-nav-link {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #111;
+
+	text-decoration: none;
+}
+
+.details {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.details-icon {
+	width: 12px;
+	height: 12px;
+}
+
+.search-button {
+	background: transparent;
+	border: none;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 24px;
+	height: 24px;
+}
+
+.search-icon {
+	width: inherit;
+	height: inherit;
+}
