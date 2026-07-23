@@ -28,8 +28,6 @@ button {
 
 }
 
-.container {}
-
 .header-nav {
 	display: flex;
 	justify-content: space-between;
@@ -239,4 +237,141 @@ button {
 .arrow-slide {
 	width: 48px;
 	height: 48px;
+}
+
+.offer {
+	background: #f5f0ec;
+	padding-block: 120px;
+}
+
+.offer-container {
+	padding-inline: 89px;
+}
+
+.offer-info {
+	width: 1040px;
+	margin-inline: auto;
+	margin-bottom: 96px;
+}
+
+.offer-eyebrow {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #1b5b31;
+
+	margin-bottom: 16px;
+}
+
+.offfer-heading {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+	color: #111;
+
+	margin-bottom: 32px;
+}
+
+.offer-heading-emphasized {
+	font-family: "Inter", sans-serif;
+	font-style: italic;
+}
+
+.offer-desc {
+	width: 709px;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #111;
+}
+
+.offer-list {
+	display: flex;
+	gap: 64px;
+}
+
+.offer-item {
+	display: flex;
+	flex-direction: column;
+
+	width: 378px;
+
+	border-radius: 28px;
+	padding: 48px 40px;
+
+	background: #fff;
+}
+
+.offer-icon-1 {
+	width: 44px;
+	height: 44px;
+
+	margin-bottom: 32px;
+}
+
+.offer-icon-2 {
+	width: 48px;
+	height: 44px;
+
+	margin-bottom: 32px;
+}
+
+.offer-icon-3 {
+	width: 44px;
+	height: 44px;
+
+	margin-bottom: 32px;
+}
+
+.offer-item-heading {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 1.15;
+	letter-spacing: -0.05em;
+	color: #111;
+
+	margin-bottom: 12px;
+}
+
+.offer-item-desc {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #111;
+
+	margin-bottom: 63px;
+}
+
+.offer-item-link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	width: fit-content;
+	height: 28px;
+
+	border-bottom: 1px solid;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	color: #1b5b31;
+}
+
+.offer-item-link-icon {
+	width: 16px;
+	height: 16px;
 }
