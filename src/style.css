@@ -1,25 +1,17 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
 @media (min-width: 320px) {
 	body {
 		overflow-x: hidden;
 	}
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-}
-
-p {
-	margin: 0;
-}
-
 ul {
 	list-style: none;
-	margin: 0;
 	padding-left: 0;
 }
 
@@ -30,7 +22,6 @@ img {
 
 button {
 	cursor: pointer;
-	padding: 0;
 }
 
 .header-page {
@@ -106,4 +97,146 @@ button {
 .search-icon {
 	width: inherit;
 	height: inherit;
+}
+
+.hero {
+	position: relative;
+	padding-block: 144.5px;
+
+	background: #dcc1ab;
+}
+
+.hero-container {
+	padding-inline: 89px;
+
+	/* display: flex;
+	gap: 64px; */
+}
+
+.hero-content {
+	width: 599px;
+}
+
+.hero-heading {
+	display: flex;
+	flex-direction: column;
+
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 60px;
+	line-height: 1.16667;
+	color: #111;
+
+	margin-bottom: 44px;
+}
+
+.hero-info {
+	width: 489px;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #111;
+
+	margin-bottom: 72px;
+}
+
+.hero-list {
+	display: flex;
+	gap: 36px;
+}
+
+.hero-item-1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: #1b5b31;
+	border-radius: 200px;
+	width: 208px;
+	height: 50px;
+	
+	cursor: pointer;
+}
+
+.hero-item-2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border: 1px solid #1b5b31;
+	border-radius: 200px;
+	width: 249px;
+	height: 50px;
+	
+	cursor: pointer;
+}
+
+.hero-link-1 {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	color: #f5f0ec;
+
+	text-decoration: none;
+}
+
+.hero-link-2 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	color: #1b5b31;
+
+	text-decoration: none;
+}
+
+.details-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.hero-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: calc(50% - 32px);
+	height: 100%;
+
+	background-image: url("/hero-background.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-image-buttons {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 24px 32px;
+
+	display: flex;
+	gap: 32px;
+
+	background: #f5f0ec;
+}
+
+.hero-image-button {
+	background: transparent;
+	border: none;
+
+	display: flex;
+}
+
+.arrow-slide {
+	width: 48px;
+	height: 48px;
 }
