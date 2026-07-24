@@ -39,6 +39,7 @@ button {
 }
 
 .logo-icon {
+	fill: #111;
 	width: 114px;
 	height: 19px;
 }
@@ -649,4 +650,155 @@ button {
 	text-align: center;
 	text-decoration: none;
 	color: #1b5b31;
+}
+
+.footer-page {
+	background: #111;
+	padding-block: 80px;
+}
+
+.footer-container {
+	display: flex;
+	flex-direction: column;
+	gap: 120px;
+
+	padding-inline: 200px;
+}
+
+.footer-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 62px;
+}
+
+.footer-contact-1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-logo {
+	display: flex;
+}
+
+.footer-logo-icon {
+	fill: #f5f0ec;
+	width: 114px;
+	height: 19px;
+}
+
+.footer-action {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.footer-action-text {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #f5f0ec;
+}
+
+.footer-action-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 200px;
+	width: 208px;
+	height: 50px;
+	background: #1b5b31;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	color: #f5f0ec;
+}
+
+.horizontal-rule {
+	border: none;
+	border-bottom: 1px solid #f5f0ec;
+}
+
+.footer-contact-2 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-nav {}
+
+.footer-nav-list {
+	display: flex;
+	gap: 48px;
+}
+
+.footer-nav-item {}
+
+.footer-nav-link {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	text-decoration: none;
+	color: #f5f0ec;
+}
+
+.footer-address {}
+
+.footer-address-list {
+	display: flex;
+	gap: 48px;
+}
+
+.footer-address-item {}
+
+.footer-address-link {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	text-decoration: none;
+	color: #f5f0ec;
+}
+
+.footer-copyright {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-copyright-text {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #f5f0ec;
+}
+
+.footer-adrespect {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #f5f0ec;
+}
+
+.footer-adrespect-icon {
+	width: 113px;
+	height: 23px;
 }
