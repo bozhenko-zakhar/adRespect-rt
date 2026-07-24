@@ -459,8 +459,6 @@ button {
 	line-height: 1.5;
 	text-align: center;
 	color: #f5f0ec;
-	
-	cursor: pointer;
 }
 
 .about-icon {
@@ -578,4 +576,77 @@ button {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.instagram {
+	padding-block: 60px;
+	background: #f5f0ec;
+}
+
+.instagram-container {
+	padding-inline: 200px;
+}
+
+.instagram-wraper {
+	display: flex;
+	align-items: flex-end;
+	gap: 64px;
+
+	padding: 120px 110px;
+	background: #1b5b31;
+}
+
+.instagram-heading {
+	display: flex;
+	flex-direction: column;
+
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 1.2;
+	letter-spacing: -0.05em;
+	color: #f5f0ec;
+}
+
+.instagram-heading-emphasized {
+	font-family: "Inter", sans-serif;
+	font-style: italic;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+}
+
+.instagram-reference {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	width: 157px;
+}
+
+.instagram-reference-text {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #f5f0ec;
+}
+
+.instagram-reference-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 200px;
+	width: 124px;
+	height: 46px;
+	background: #f5f0ec;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	color: #1b5b31;
 }
