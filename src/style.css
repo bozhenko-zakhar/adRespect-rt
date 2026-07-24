@@ -124,8 +124,6 @@ button {
 
 	width: 24px;
 	height: 24px;
-
-	z-index: 2;
 }
 
 .search-icon {
@@ -274,7 +272,7 @@ button {
 	width: calc(50% - 32px);
 	height: 100%;
 
-	background-image: url("/hero-background.jpg");
+	background-image: url("/hero-background-0.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
