@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
 		integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@1,500&display=swap"
+		rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="stylesheet" href="./src/style.css">
 	<title>adrespect-rt</title>
@@ -33,11 +38,20 @@
 						<li class="header-nav-item"><a class="header-nav-link" href="#">Kontakt</a></li>
 					</ul>
 
-					<button class="search-button">
-						<svg class="search-icon">
-							<use href="/icons/search.svg"></use>
-						</svg>
-					</button>
+					<form class="search-form">
+						<input type="text" class="search-input disappear">
+
+						<button type="button" class="search-button">
+							<svg class="search-icon">
+								<use href="/icons/search.svg"></use>
+							</svg>
+						
+							<div class="search-cross disappear">
+								<span class="search-cross-1"></span>
+								<span class="search-cross-2"></span>
+							</div>
+						</button>
+					</form>
 				</div>
 			</nav>
 
@@ -57,7 +71,7 @@
 						<li class="hero-item-2">
 							<a class="hero-link-2" href="#">
 								Zobacz nasze realizacje
-								<svg class="details-icon">
+								<svg class="hero-details-icon">
 									<use href="/icons/arrow-down.svg"></use>
 								</svg>
 							</a>

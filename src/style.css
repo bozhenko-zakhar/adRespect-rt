@@ -45,6 +45,9 @@ button {
 }
 
 .header-nav-items {
+	position: relative;
+	width: 442px;
+
 	display: flex;
 	gap: 48px;
 }
@@ -74,12 +77,44 @@ button {
 	gap: 5px;
 }
 
+.search-form {}
+
+.search-input {
+	position: absolute;
+	top: 50%;
+	right: -4px;
+	transform: translateY(-50%);
+
+	display: block;
+	padding-inline: 16px 40px;
+	width: 450px;
+	height: 32px;
+
+	border: 1px solid #f5f0ec;
+	border-radius: 200px;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #111;
+
+	transition: width 0.15s ease, height 0.15s ease, border 0.15s ease;
+}
+
+.search-input.disappear {
+	width: 0;
+	border: 1px solid transparent;
+}
+
 .details-icon {
 	width: 12px;
 	height: 12px;
 }
 
 .search-button {
+	position: relative;
 	background: transparent;
 	border: none;
 
@@ -89,11 +124,45 @@ button {
 
 	width: 24px;
 	height: 24px;
+
+	z-index: 2;
 }
 
 .search-icon {
 	width: inherit;
 	height: inherit;
+}
+
+.search-icon.disappear {
+	display: none;
+}
+
+.search-cross {}
+
+.search-cross.disappear {
+	display: none;
+}
+
+.search-cross-1 {
+	height: 2.5px;
+	width: 100%;
+	background: black;
+	border-radius: 25px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.search-cross-2 {
+	height: 2.5px;
+	width: 100%;
+	background: black;
+	border-radius: 25px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .hero {
@@ -125,7 +194,7 @@ button {
 }
 
 .hero-info {
-	width: 489px;
+	width: 439px;
 
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
@@ -193,7 +262,7 @@ button {
 	text-decoration: none;
 }
 
-.details-icon {
+.hero-details-icon {
 	width: 16px;
 	height: 16px;
 }
@@ -458,6 +527,7 @@ button {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.5;
+	text-decoration: none;
 	text-align: center;
 	color: #f5f0ec;
 }
