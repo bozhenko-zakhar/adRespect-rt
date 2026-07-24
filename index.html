@@ -112,12 +112,12 @@
 						<h3 class="offer-item-heading">Projekty</h3>
 						<p class="offer-item-desc">Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.</p>
 
-						<a class="offer-item-link" href="#">
+						<button class="offer-item-button" type="button" data-number="0">
 							Dowiedz się więcej
-							<svg class="offer-item-link-icon">
+							<svg class="offer-item-button-icon">
 								<use href="/icons/arrow-right.svg"></use>
 							</svg>
-						</a>
+						</button>
 					</li>
 					<li class="offer-item">
 						<svg class="offer-icon-2">
@@ -127,12 +127,12 @@
 						<h3 class="offer-item-heading">Wizualizacje</h3>
 						<p class="offer-item-desc">Przedstawimy Ci projekty koncepcyjne  w postaci wirtualnego spaceru animowanego w technologii 3D.</p>
 
-						<a class="offer-item-link" href="#">
+						<button class="offer-item-button" type="button" data-number="1">
 							Dowiedz się więcej
-							<svg class="offer-item-link-icon">
+							<svg class="offer-item-button-icon">
 								<use href="/icons/arrow-right.svg"></use>
 							</svg>
-						</a>
+						</button>
 					</li>
 					<li class="offer-item">
 						<svg class="offer-icon-3">
@@ -142,12 +142,12 @@
 						<h3 class="offer-item-heading">Realizacje</h3>
 						<p class="offer-item-desc">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.</p>
 					
-						<a class="offer-item-link" href="#">
+						<button class="offer-item-button" type="button" data-number="2">
 							Dowiedz się więcej
-							<svg class="offer-item-link-icon">
+							<svg class="offer-item-button-icon">
 								<use href="/icons/arrow-right.svg"></use>
 							</svg>
-						</a>
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -183,7 +183,7 @@
 							<use href="/icons/arrow-down.svg"></use>
 						</svg>
 					</button>
-					
+
 					<li class="projects-gallery-sizer"></li>
 
 					<li class="projects-gallery-item projects-gallery-item-large">
@@ -279,6 +279,36 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="modal-overlay">
+		<div class="modal-container">
+			<div class="modal-cross-button">
+				<span class="modal-cross-1"></span>
+				<span class="modal-cross-2"></span>
+			</div>
+
+			<img class="modal-image">
+
+			<div class="modal-info">
+				<div class="modal-title-container">
+					<svg class="plant-icon">
+						<use href="/icons/plant.svg"></use>
+					</svg>
+					<h2 class="modal-title"></h2>
+				</div>
+
+				<h3 class="modal-subtitle"></h3>
+
+				<p class="modal-description"></p>
+
+				<h4 class="modal-features-title"></h4>
+
+				<ul class="modal-list"></ul>
+
+				<button class="modal-contact-button">Skontaktuj się</button>
+			</div>
+		</div>
+	</div>
 
 	<script type="module" src="/src/main.js"></script>
 </body>

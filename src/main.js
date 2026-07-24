@@ -128,3 +128,91 @@ projectsGradientButton.addEventListener("click", function () {
 		}
 	}
 });
+
+const modalData = [
+	{
+		image: "/projects.jpg",
+		title: "Projekty",
+		subtitle: "Projektujemy ogrody dopasowane do Twojego stylu życia",
+		description: "Tworzymy indywidualne projekty ogrodów, tarasów oraz stref wypoczynkowych. Każda koncepcja powstaje z uwzględnieniem ukształtowania terenu, istniejącej roślinności oraz oczekiwań klienta.",
+		featuresTitle: "Zakres usługi",
+		features: [
+			"Indywidualna konsultacja",
+			"Projekt koncepcyjny",
+			"Dobór roślin i materiałów",
+			"Plan oświetlenia i nawodnienia",
+			"Dokumentacja wykonawcza"
+		]
+	},
+	{
+		image: "/landscape-designer.jpg",
+		title: "Wizualizacje",
+		subtitle: "Zobacz swój ogród, zanim powstanie",
+		description: "Przygotowujemy realistyczne wizualizacje 3D, które pozwalają zobaczyć przyszły ogród z różnych perspektyw oraz wirtualnie przejść przez projekt jeszcze przed rozpoczęciem realizacji.",
+		featuresTitle: "Otrzymujesz",
+		features: [
+			"Wizualizacje 3D wysokiej jakości",
+			"Wirtualny spacer",
+			"Możliwość wprowadzania zmian",
+			"Kilka wariantów projektu",
+			"Realistyczne odwzorowanie materiałów i roślin"
+		]
+	},
+	{
+		image: "/modern-garden.jpg",
+		title: "Realizacje",
+		subtitle: "Realizujemy projekty od pierwszego szkicu do ostatniego detalu",
+		description: "Dbamy o każdy etap wykonania inwestycji, wykorzystując nowoczesny sprzęt, sprawdzone technologie oraz wysokiej jakości materiały. Dzięki temu gotowy ogród zachwyca wyglądem i funkcjonalnością przez wiele lat.",
+		featuresTitle: "Etapy realizacji",
+		features: [
+			"Przygotowanie terenu",
+			"Prace ziemne",
+			"Systemy nawadniania",
+			"Nasadzenia roślin",
+			"Wykończenie i pielęgnacja"
+		]
+	},
+]
+
+const modalOverlay = document.querySelector(".modal-overlay");
+const modalContainer = modalOverlay.querySelector(".modal-container");
+const modalCrossButton = modalContainer.querySelector(".modal-cross-button");
+const modalImage = modalContainer.querySelector(".modal-image");
+const modalTitle = modalContainer.querySelector(".modal-title");
+const modalSubtitle = modalContainer.querySelector(".modal-subtitle");
+const modalDescription = modalContainer.querySelector(".modal-description");
+const modalFeaturesTitle = modalContainer.querySelector(".modal-features-title");
+const modalList = modalContainer.querySelector(".modal-list");
+
+const offerItemButtons = document.querySelectorAll(".offer-item-button");
+
+
+function generateFeatures(features) {
+	return (
+		features.map(feature => `<li class="modal-item">${feature}</li>`).join("")
+	)
+}
+
+function openModal(service) {
+	modalImage.src = service.image;
+	modalImage.alt = "Image that represents " + service.title.toLocaleLowerCase();
+	modalTitle.textContent = service.title;
+	modalSubtitle.textContent = service.subtitle;
+	modalDescription.textContent = service.description;
+	modalFeaturesTitle.textContent = service.featuresTitle;
+	modalList.innerHTML = generateFeatures(service.features);
+
+	modalOverlay.classList.add("modal-open");
+}
+
+function closeModal() {
+	modalOverlay.classList.remove("modal-open");
+}
+
+modalCrossButton.addEventListener("click", closeModal);
+
+offerItemButtons.forEach(button => {
+	button.addEventListener("click", function () {
+		openModal(modalData[+button.dataset.number]);
+	});
+});
