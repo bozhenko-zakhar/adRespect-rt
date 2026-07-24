@@ -459,10 +459,123 @@ button {
 	line-height: 1.5;
 	text-align: center;
 	color: #f5f0ec;
+	
+	cursor: pointer;
 }
 
 .about-icon {
-	stroke: currentColor;
+	fill: currentColor;
 	width: 16px;
 	height: 16px;
+}
+
+.projects {
+	position: relative;
+	background: #dcc1ab;
+	padding-top: 120px;
+}
+
+.projects-container {
+	display: flex;
+	flex-direction: column;
+	gap: 96px;
+}
+
+.projects-text {
+	padding-inline: 160px;
+}
+
+.projects-eyebrow {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #1b5b31;
+
+	margin-bottom: 16px;
+}
+
+.projects-heading {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+	color: #111;
+}
+
+.projects-heading-emphasized {
+	font-family: "Inter", sans-serif;
+	font-style: italic;
+}
+
+.projects-gradient {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+
+	width: 100%;
+	height: 1000px;
+	margin-bottom: 42px;
+	background: linear-gradient(360deg, #dcc1ab 0%, rgba(214, 183, 158, 0) 100%);
+}
+
+.projects-gradient-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+
+	border: 1px solid #111;
+	border-radius: 200px;
+	width: 123px;
+	height: 50px;
+	background: transparent;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	color: #111;
+}
+
+.projects-gradient-icon {
+	fill: currentColor;
+	width: 16px;
+	height: 16px;
+}
+
+.projects-gallery {}
+
+.projects-gallery-sizer,
+.projects-gallery-item {
+	width: 452px;
+}
+
+.projects-gallery-item {
+	margin-bottom: 42px;
+}
+
+.projects-gallery-item-small {
+	height: 338px;
+}
+
+.projects-gallery-item-medium {
+	height: 452px;
+}
+
+.projects-gallery-item-large {
+	height: 601px;
+}
+
+.projects-gallery-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
