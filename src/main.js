@@ -1,16 +1,21 @@
-import Masonry from "masonry-layout";
 import imagesLoaded from "imagesloaded";
+import Masonry from "masonry-layout";
+import GLightbox from "glightbox";
+import "glightbox/dist/css/glightbox.css";
 
 var gallery = document.querySelector('.projects-gallery');
+var lightbox = GLightbox({
+	selector: ".glightbox",
+});; 
 var msnry;
 
 imagesLoaded(gallery, function() {
-  msnry = new Masonry(gallery, {
+	msnry = new Masonry(gallery, {
 		itemSelector: '.projects-gallery-item',
 		columnWidth: '.projects-gallery-sizer',
 		gutter: 42,
 		horizontalOrder: true,
-	})
+	});
 });
 
 const searchIcon = document.querySelector(".search-icon");
@@ -104,11 +109,17 @@ const projectsGradientButton = document.querySelector(".projects-gradient-button
 function generateGalleryItems(items) {
 	return items.map(image => `
 		<li class="projects-gallery-item projects-gallery-item-${image.size}">
-			<img
-				class="projects-gallery-image"
-				src="/gallery/${image.filename}"
-				alt="${image.alt}"
+			<a 
+				class="glightbox" 
+				href="/glightbox/${image.filename}"
+				data-gallery="projects"
 			>
+				<img
+					class="projects-gallery-image"
+					src="/gallery/${image.filename}"
+					alt="${image.alt}"
+				>
+			</a>
 		</li>
 	`).join("");
 }
@@ -120,6 +131,8 @@ projectsGradientButton.addEventListener("click", function () {
 		imagesLoaded(projectsGallery, () => {
 			msnry.reloadItems();
 			msnry.layout();
+
+			lightbox.reload();
 		});
 
 		if (!images.length) {

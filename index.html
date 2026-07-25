@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,11 +16,12 @@
 	<link rel="stylesheet" href="./src/style.css">
 	<title>adrespect-rt</title>
 </head>
+
 <body>
 	<header class="header-page">
-		<div class="header-container">
+		<div class="upper-container">
 			<nav class="header-nav">
-				<a class="logo" href="#">
+				<a class="logo" href="./index.html">
 					<svg class="logo-icon">
 						<use href="/icons/giarddesign.svg"></use>
 					</svg>
@@ -27,15 +29,37 @@
 
 				<div class="header-nav-items">
 					<ul class="header-nav-links">
-						<li class="header-nav-item"><a class="header-nav-link details" href="#">
-							Oferta
-							<svg class="details-icon">
-								<use href="/icons/details.svg"></use>
-							</svg>
-						</a></li>
-						<li class="header-nav-item"><a class="header-nav-link" href="#">O firmie</a></li>
-						<li class="header-nav-item"><a class="header-nav-link" href="#">Realizacje</a></li>
-						<li class="header-nav-item"><a class="header-nav-link" href="#">Kontakt</a></li>
+						<li class="header-nav-item" data-dropdown>
+							<a class="header-nav-link details" href="#offer">
+								Oferta
+								<svg class="details-icon">
+									<use href="/icons/details.svg"></use>
+								</svg>
+							</a>
+							<div class="dropdown-content">
+								<a class="dropdown-link" href="#offer">
+									Projekty
+									<svg class="dropdown-icon">
+										<use href="/icons/arrow-right.svg"></use>
+									</svg>
+								</a>
+								<a class="dropdown-link" href="#offer">
+									Wizualizacje
+									<svg class="dropdown-icon">
+										<use href="/icons/arrow-right.svg"></use>
+									</svg>
+								</a>
+								<a class="dropdown-link" href="#offer">
+									Realizacje
+									<svg class="dropdown-icon">
+										<use href="/icons/arrow-right.svg"></use>
+									</svg>
+								</a>
+							</div>
+						</li>
+						<li class="header-nav-item"><a class="header-nav-link" href="#about">O firmie</a></li>
+						<li class="header-nav-item"><a class="header-nav-link" href="#projects">Realizacje</a></li>
+						<li class="header-nav-item"><a class="header-nav-link" href="#instagram">Kontakt</a></li>
 					</ul>
 
 					<form class="search-form">
@@ -45,7 +69,7 @@
 							<svg class="search-icon">
 								<use href="/icons/search.svg"></use>
 							</svg>
-						
+
 							<div class="search-cross disappear">
 								<span class="search-cross-1"></span>
 								<span class="search-cross-2"></span>
@@ -58,16 +82,17 @@
 	</header>
 
 	<main class="main-page">
-		<section class="hero">
-			<div class="hero-container">
+		<section class="hero" id="hero">
+			<div class="upper-container">
 				<div class="hero-content">
 					<h1 class="hero-heading">Nowoczesna aranżacja <span class="hero-heading-cutted">Twojego ogrodu</span></h1>
-					<p class="hero-info">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+					<p class="hero-info">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy
+						kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
 
 					<ul class="hero-list">
-						<li class="hero-item-1"><a class="hero-link-1" href="#">Skontaktuj się z nami</a></li>
+						<li class="hero-item-1"><a class="hero-link-1" href="#instagram">Skontaktuj się z nami</a></li>
 						<li class="hero-item-2">
-							<a class="hero-link-2" href="#">
+							<a class="hero-link-2" href="#projects">
 								Zobacz nasze realizacje
 								<svg class="hero-details-icon">
 									<use href="/icons/arrow-down.svg"></use>
@@ -95,14 +120,16 @@
 
 
 		</section>
-		<section class="offer">
+		<section class="offer" id="offer">
 			<div class="offer-container">
 				<div class="offer-info">
 					<p class="offer-eyebrow">Oferta</p>
 					<h2 class="offfer-heading">Działamy <em class="offer-heading-emphasized">kompleksowo</em></h2>
-					<p class="offer-desc">Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne. Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie, a na każdym etapie posłużymy i wieloletnim doświadczeniem.</p>
+					<p class="offer-desc">Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy nowoczesne ogrody
+						przydomowe oraz rezydencjonalne. Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie, a na
+						każdym etapie posłużymy i wieloletnim doświadczeniem.</p>
 				</div>
-				
+
 				<ul class="offer-list">
 					<li class="offer-item">
 						<svg class="offer-icon-1">
@@ -110,7 +137,8 @@
 						</svg>
 
 						<h3 class="offer-item-heading">Projekty</h3>
-						<p class="offer-item-desc">Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.</p>
+						<p class="offer-item-desc">Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem
+							istniejącej przestrzeni.</p>
 
 						<button class="offer-item-button" type="button" data-number="0">
 							Dowiedz się więcej
@@ -125,7 +153,8 @@
 						</svg>
 
 						<h3 class="offer-item-heading">Wizualizacje</h3>
-						<p class="offer-item-desc">Przedstawimy Ci projekty koncepcyjne  w postaci wirtualnego spaceru animowanego w technologii 3D.</p>
+						<p class="offer-item-desc">Przedstawimy Ci projekty koncepcyjne  w postaci wirtualnego spaceru animowanego w
+							technologii 3D.</p>
 
 						<button class="offer-item-button" type="button" data-number="1">
 							Dowiedz się więcej
@@ -138,10 +167,11 @@
 						<svg class="offer-icon-3">
 							<use href="/icons/shine.svg"></use>
 						</svg>
-					
+
 						<h3 class="offer-item-heading">Realizacje</h3>
-						<p class="offer-item-desc">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.</p>
-					
+						<p class="offer-item-desc">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych
+							technologii.</p>
+
 						<button class="offer-item-button" type="button" data-number="2">
 							Dowiedz się więcej
 							<svg class="offer-item-button-icon">
@@ -152,15 +182,18 @@
 				</ul>
 			</div>
 		</section>
-		<section class="about">
+		<section class="about" id="about">
 			<div class="about-container">
 				<div class="about-image"></div>
 
 				<div class="about-content">
 					<p class="about-eyebrow">O firmie</p>
 					<h2 class="about-heading">Tworzymy z <em class="about-heading-emphasized">pasją</em></h2>
-					<p class="about-info">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.</p>
-					<a class="about-link" href="#">
+					<p class="about-info">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci
+						oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja
+						to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody
+						małoobsługowe, dostosowane do współczesnego trybu życia.</p>
+					<a class="about-link" href="#instagram">
 						Poznaj nas bliżej
 						<svg class="about-icon">
 							<use href="/icons/arrow-right.svg"></use>
@@ -169,7 +202,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="projects">
+		<section class="projects" id="projects">
 			<div class="projects-container">
 				<div class="projects-text">
 					<p class="projects-eyebrow">Realizacje</p>
@@ -186,44 +219,72 @@
 
 					<li class="projects-gallery-sizer"></li>
 
-					<li class="projects-gallery-item projects-gallery-item-large">
-						<img class="projects-gallery-image" src="/gallery/modern-concrete-staircase.jpg" alt="Modern concrete staircase surrounded by tropical plants">
+					<li class="projects-gallery-item gallery-item-large">
+						<a class="glightbox" href="/glightbox/modern-concrete-staircase.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/modern-concrete-staircase.jpg"
+								alt="Modern concrete staircase surrounded by tropical plants">
+						</a>
 					</li>
-					<li class="projects-gallery-item projects-gallery-item-small">
-						<img class="projects-gallery-image" src="/gallery/backyard-pergola-pool.jpg" alt="Contemporary backyard with a wooden pergola and swimming pool">
+					<li class="projects-gallery-item gallery-item-small">
+						<a class="glightbox" href="/glightbox/backyard-pergola-pool.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/backyard-pergola-pool.jpg"
+								alt="Contemporary backyard with a wooden pergola and swimming pool">
+						</a>
 					</li>
-					<li class="projects-gallery-item projects-gallery-item-medium">
-						<img class="projects-gallery-image" src="/gallery/flowering-pergola-pathway.jpg" alt="Garden pathway beneath a flowering pergola">
+					<li class="projects-gallery-item gallery-item-medium">
+						<a class="glightbox" href="/glightbox/flowering-pergola-pathway.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/flowering-pergola-pathway.jpg"
+								alt="Garden pathway beneath a flowering pergola">
+						</a>
 					</li>
-					<li class="projects-gallery-item projects-gallery-item-medium">
-						<img class="projects-gallery-image" src="/gallery/open-courtyard-pergolas.jpg" alt="Open courtyard with modern wooden pergolas">
-					</li>	
-					<li class="projects-gallery-item projects-gallery-item-medium">
-						<img class="projects-gallery-image" src="/gallery/peaceful-koi-pond.jpg" alt="Peaceful koi pond with natural landscaping">
+					<li class="projects-gallery-item gallery-item-medium">
+						<a class="glightbox" href="/glightbox/open-courtyard-pergolas.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/open-courtyard-pergolas.jpg"
+								alt="Open courtyard with modern wooden pergolas">
+						</a>
 					</li>
-					<li class="projects-gallery-item projects-gallery-item-large">
-						<img class="projects-gallery-image" src="/gallery/tropical-garden-pathway.jpg" alt="Curved stone pathway through a tropical garden">
+					<li class="projects-gallery-item gallery-item-medium">
+						<a class="glightbox" href="/glightbox/peaceful-koi-pond.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/peaceful-koi-pond.jpg"
+								alt="Peaceful koi pond with natural landscaping">
+						</a>
+						</li>
+					<li class="projects-gallery-item gallery-item-large">
+						<a class="glightbox" href="/glightbox/tropical-garden-pathway.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/tropical-garden-pathway.jpg"
+								alt="Curved stone pathway through a tropical garden">
+						</a>
 					</li>
-					<li class="projects-gallery-item projects-gallery-item-small">
-						<img class="projects-gallery-image" src="/gallery/spiral-staircase-greenery.jpg" alt="Modern spiral staircase with indoor greenery">
+					<li class="projects-gallery-item gallery-item-small">
+						<a class="glightbox" href="/glightbox/spiral-staircase-greenery.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/spiral-staircase-greenery.jpg"
+								alt="Modern spiral staircase with indoor greenery">
+						</a>
 					</li>
-					<li class="projects-gallery-item projects-gallery-item-large">
-						<img class="projects-gallery-image" src="/gallery/wooden-deck-pergola.jpg" alt="Wooden deck with a contemporary garden pergola">
+					<li class="projects-gallery-item gallery-item-large">
+						<a class="glightbox" href="/glightbox/wooden-deck-pergola.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/wooden-deck-pergola.jpg"
+								alt="Wooden deck with a contemporary garden pergola">
+						</a>
 					</li>
-					<li class="projects-gallery-item projects-gallery-item-small">
-						<img class="projects-gallery-image" src="/gallery/wooden-pergola-detail.jpg" alt="Architectural view beneath a wooden pergola">
+					<li class="projects-gallery-item gallery-item-small">
+						<a class="glightbox" href="/glightbox/wooden-pergola-detail.jpg" data-gallery="projects">
+							<img class="projects-gallery-image" src="/gallery/wooden-pergola-detail.jpg"
+								alt="Architectural view beneath a wooden pergola">
+						</a>
 					</li>
 				</ul>
 			</div>
 		</section>
-		<section class="instagram">
-			<div class="instagram-container">
+		<section class="instagram" id="instagram">
+			<div class="lower-container">
 				<div class="instagram-wraper">
-					<h2 class="instagram-heading">Zostańmy w kontakcie! <span>Znajdziesz nas na <em class="instagram-heading-emphasized">Instagramie.</em></span></h2>
+					<h2 class="instagram-heading">Zostańmy w kontakcie! <span>Znajdziesz nas na <em
+								class="instagram-heading-emphasized">Instagramie.</em></span></h2>
 
 					<div class="instagram-reference">
 						<p class="instagram-reference-text">Śledź nasze najnowsze realizacje!</p>
-						<a class="instagram-reference-link" href="#">Instagram</a>
+						<a class="instagram-reference-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
 					</div>
 				</div>
 			</div>
@@ -231,51 +292,53 @@
 	</main>
 
 	<footer class="footer-page">
-		<div class="footer-container">
-			<div class="footer-contact">
-				<div class="footer-contact-1">
-					<a class="footer-logo" href="#">
-						<svg class="footer-logo-icon">
-							<use href="/icons/giarddesign.svg"></use>
-						</svg>
-					</a>
+		<div class="lower-container">
+			<div class="footer-content">
+				<div class="footer-contact">
+					<div class="footer-contact-1">
+						<a class="footer-logo" href="./index.html">
+							<svg class="footer-logo-icon">
+								<use href="/icons/giarddesign.svg"></use>
+							</svg>
+						</a>
 
-					<div class="footer-action">
-						<p class="footer-action-text">Daj znać, co możemy dla Ciebie zrobić!</p>
-						<a class="footer-action-link" href="#">Skontaktuj się z nami</a>
+						<div class="footer-action">
+							<p class="footer-action-text">Daj znać, co możemy dla Ciebie zrobić!</p>
+							<a class="footer-action-link" href="#instagram">Skontaktuj się z nami</a>
+						</div>
+					</div>
+
+					<hr class="horizontal-rule" />
+
+					<div class="footer-contact-2">
+						<nav class="footer-nav">
+							<ul class="footer-nav-list">
+								<li class="footer-nav-item"><a class="footer-nav-link" href="#">Kontakt</a></li>
+								<li class="footer-nav-item"><a class="footer-nav-link" href="#">Instagram</a></li>
+								<li class="footer-nav-item"><a class="footer-nav-link" href="#">Facebook</a></li>
+								<li class="footer-nav-item"><a class="footer-nav-link" href="#">LinkedIn</a></li>
+							</ul>
+						</nav>
+
+						<address class="footer-address">
+							<ul class="footer-address-list">
+								<li class="footer-address-item"><a class="footer-address-link" href="tel:000000000">000-000-000</a></li>
+								<li class="footer-address-item"><a class="footer-address-link"
+										href="mailto:giarddesign@kontakt.pl">giarddesign@kontakt.pl</a></li>
+							</ul>
+						</address>
 					</div>
 				</div>
 
-				<hr class="horizontal-rule" />
-
-				<div class="footer-contact-2">
-					<nav class="footer-nav">
-						<ul class="footer-nav-list">
-							<li class="footer-nav-item"><a class="footer-nav-link" href="#">Kontakt</a></li>
-							<li class="footer-nav-item"><a class="footer-nav-link" href="#">Instagram</a></li>
-							<li class="footer-nav-item"><a class="footer-nav-link" href="#">Facebook</a></li>
-							<li class="footer-nav-item"><a class="footer-nav-link" href="#">LinkedIn</a></li>
-						</ul>
-					</nav>
-
-					<address class="footer-address">
-						<ul class="footer-address-list">
-							<li class="footer-address-item"><a class="footer-address-link" href="tel:000000000">000-000-000</a></li>
-							<li class="footer-address-item"><a class="footer-address-link"
-									href="mailto:giarddesign@kontakt.pl">giarddesign@kontakt.pl</a></li>
-						</ul>
-					</address>
+				<div class="footer-copyright">
+					<p class="footer-copyright-text">Prawa zastrzeżone © 2022</p>
+					<p class="footer-adrespect">
+						made by
+						<svg class="footer-adrespect-icon">
+							<use href="/icons/adRespect.svg"></use>
+						</svg>
+					</p>
 				</div>
-			</div>
-
-			<div class="footer-copyright">
-				<p class="footer-copyright-text">Prawa zastrzeżone © 2022</p>
-				<p class="footer-adrespect">
-					made by
-					<svg class="footer-adrespect-icon">
-						<use href="/icons/adRespect.svg"></use>
-					</svg>
-				</p>
 			</div>
 		</div>
 	</footer>
