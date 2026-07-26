@@ -248,7 +248,7 @@
 							<img class="projects-gallery-image" src="/gallery/peaceful-koi-pond.jpg"
 								alt="Peaceful koi pond with natural landscaping">
 						</a>
-						</li>
+					</li>
 					<li class="projects-gallery-item gallery-item-large">
 						<a class="glightbox" href="/glightbox/tropical-garden-pathway.jpg" data-gallery="projects">
 							<img class="projects-gallery-image" src="/gallery/tropical-garden-pathway.jpg"
@@ -304,7 +304,7 @@
 
 						<div class="footer-action">
 							<p class="footer-action-text">Daj znać, co możemy dla Ciebie zrobić!</p>
-							<a class="footer-action-link" href="#instagram">Skontaktuj się z nami</a>
+							<button class="footer-action-button" href="#instagram">Skontaktuj się z nami</button>
 						</div>
 					</div>
 
@@ -373,6 +373,43 @@
 		</div>
 	</div>
 
+	<div class="modal-form-overlay">
+		<div class="modal-form-container">
+			<div class="modal-form-cross-button">
+				<span class="modal-form-cross-1"></span>
+				<span class="modal-form-cross-2"></span>
+			</div>
+
+			<form class="modal-form">
+				<h2 class="modal-form-heading">Porozmawiajmy o Twoim ogrodzie</h2>
+				<p class="modal-form-paragraph">Zostaw swoje dane, a przygotujemy wstępną odpowiedź dopasowaną do Twoich
+					oczekiwań.</p>
+
+				<div class="modal-form-inputs">
+					<div class="modal-form-input-	">
+						<input class="modal-form-input" type="text" placeholder="Imię" minlength="2" required>
+						<p class="modal-form-error">Podaj imię</p>
+					</div>
+
+					<div class="modal-form-input-container">
+						<input class="modal-form-input" type="email" placeholder="E-mail" required>
+						<p class="modal-form-error">Podaj poprawny adres e-mail</p>
+					</div>
+
+					<div class="modal-form-input-container">
+						<input class="modal-form-input" type="text" placeholder="Telefon" pattern="\+?[1-9][0-9]{7,14}" required>
+						<p class="modal-form-error">Podaj poprawny numer telefonu</p>
+					</div>
+				</div>
+
+				<button class="modal-form-button">Wyślij</button>
+			</form>
+
+			<img class="modal-form-image" src="/customer-service.jpg" alt="Człowiek nabliża się, trzymając tablet na ręce">
+		</div>
+	</div>
+
 	<script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

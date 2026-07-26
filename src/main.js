@@ -3,13 +3,16 @@ import Masonry from "masonry-layout";
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.css";
 
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+
 var gallery = document.querySelector('.projects-gallery');
 var lightbox = GLightbox({
 	selector: ".glightbox",
-});; 
+});;
 var msnry;
 
-imagesLoaded(gallery, function() {
+imagesLoaded(gallery, function () {
 	msnry = new Masonry(gallery, {
 		itemSelector: '.projects-gallery-item',
 		columnWidth: '.projects-gallery-sizer',
@@ -38,24 +41,24 @@ const buttonNext = document.querySelectorAll(".hero-image-button")[1]
 
 let currentSlide = 0;
 const slides = [
-  {
-    title: "Nowoczesna aranżacja <span class='hero-heading-cutted'>Twojego ogrodu</span>",
-    description:
-      "Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.",
-    background: "/hero-background-0.jpg",
-  },
-  {
-    title: "Tworzymy przestrzenie pełne <span class='hero-heading-cutted'>Zieleni</span>",
-    description:
-      "Projektujemy ogrody, tarasy i strefy relaksu, które łączą nowoczesny design z funkcjonalnością. Dbamy o każdy detal – od koncepcji aż po realizację.",
-    background: "/hero-background-1.jpg",
-  },
-  {
-    title: "Ogród, który jest stworzony dla <span class='hero-heading-cutted'>Ciebie</span>",
-    description:
-      "Każdy projekt powstaje z myślą o komforcie i stylu życia naszych klientów. Tworzymy miejsca, które zachwycają estetyką przez cały rok.",
-    background: "/hero-background-2.jpg",
-  },
+	{
+		title: "Nowoczesna aranżacja <span class='hero-heading-cutted'>Twojego ogrodu</span>",
+		description:
+			"Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.",
+		background: "/hero-background-0.jpg",
+	},
+	{
+		title: "Tworzymy przestrzenie pełne <span class='hero-heading-cutted'>Zieleni</span>",
+		description:
+			"Projektujemy ogrody, tarasy i strefy relaksu, które łączą nowoczesny design z funkcjonalnością. Dbamy o każdy detal – od koncepcji aż po realizację.",
+		background: "/hero-background-1.jpg",
+	},
+	{
+		title: "Ogród, który jest stworzony dla <span class='hero-heading-cutted'>Ciebie</span>",
+		description:
+			"Każdy projekt powstaje z myślą o komforcie i stylu życia naszych klientów. Tworzymy miejsca, które zachwycają estetyką przez cały rok.",
+		background: "/hero-background-2.jpg",
+	},
 ];
 
 function showSlide(slide) {
@@ -83,24 +86,24 @@ buttonNext.addEventListener("click", function () {
 });
 
 const images = [
-  { filename: "architectural-courtyard.jpg", alt: "Modern landscaped courtyard", size: "large" },
-  { filename: "bamboo-garden-architecture.jpg", alt: "Bamboo garden with contemporary landscaping", size: "small" },
-  { filename: "contemporary-pergola.jpg", alt: "Contemporary wooden pergola", size: "medium" },
-  { filename: "flower-arch-garden.jpg", alt: "Garden pathway beneath a flowering arch", size: "medium" },
-  { filename: "indoor-tropical-courtyard.jpg", alt: "Indoor tropical courtyard filled with lush greenery", size: "medium" },
-  { filename: "koi-pond-garden.jpg", alt: "Peaceful koi pond surrounded by garden plants", size: "large" },
-  { filename: "luxury villa courtyard.jpg", alt: "Modern villa courtyard with landscaped garden", size: "small" },
-  { filename: "luxury-pool-villa.jpg", alt: "Contemporary villa with an outdoor swimming pool", size: "large" },
-  { filename: "minimalist-landscape-architecture.jpg", alt: "Minimalist landscape garden design", size: "small" },
-  { filename: "modern-botanical-garden.jpg", alt: "Modern botanical garden with diverse plants", size: "large" },
-  { filename: "modern-patio-tropical.jpg", alt: "Tropical patio with modern outdoor design", size: "small" },
-  { filename: "reflection-pool-architecture.jpg", alt: "Reflecting pool beside contemporary architecture", size: "medium" },
-  { filename: "tropical-landscaping.jpg", alt: "Lush tropical garden landscaping", size: "medium" },
-  { filename: "tropical-modern-garden.jpg", alt: "Modern tropical garden with natural greenery", size: "medium" },
-  { filename: "tropical-pathway.jpg", alt: "Stone pathway through a tropical garden", size: "large" },
-  { filename: "wooden-deck-garden.jpg", alt: "Wooden deck overlooking a landscaped garden", size: "small" },
-  { filename: "wooden-pergola-architecture.jpg", alt: "Modern wooden pergola in a landscaped garden", size: "large" },
-  { filename: "zen-water-garden.jpg", alt: "Zen garden with a peaceful water feature", size: "small" },
+	{ filename: "architectural-courtyard.jpg", alt: "Modern landscaped courtyard", size: "large" },
+	{ filename: "bamboo-garden-architecture.jpg", alt: "Bamboo garden with contemporary landscaping", size: "small" },
+	{ filename: "contemporary-pergola.jpg", alt: "Contemporary wooden pergola", size: "medium" },
+	{ filename: "flower-arch-garden.jpg", alt: "Garden pathway beneath a flowering arch", size: "medium" },
+	{ filename: "indoor-tropical-courtyard.jpg", alt: "Indoor tropical courtyard filled with lush greenery", size: "medium" },
+	{ filename: "koi-pond-garden.jpg", alt: "Peaceful koi pond surrounded by garden plants", size: "large" },
+	{ filename: "luxury villa courtyard.jpg", alt: "Modern villa courtyard with landscaped garden", size: "small" },
+	{ filename: "luxury-pool-villa.jpg", alt: "Contemporary villa with an outdoor swimming pool", size: "large" },
+	{ filename: "minimalist-landscape-architecture.jpg", alt: "Minimalist landscape garden design", size: "small" },
+	{ filename: "modern-botanical-garden.jpg", alt: "Modern botanical garden with diverse plants", size: "large" },
+	{ filename: "modern-patio-tropical.jpg", alt: "Tropical patio with modern outdoor design", size: "small" },
+	{ filename: "reflection-pool-architecture.jpg", alt: "Reflecting pool beside contemporary architecture", size: "medium" },
+	{ filename: "tropical-landscaping.jpg", alt: "Lush tropical garden landscaping", size: "medium" },
+	{ filename: "tropical-modern-garden.jpg", alt: "Modern tropical garden with natural greenery", size: "medium" },
+	{ filename: "tropical-pathway.jpg", alt: "Stone pathway through a tropical garden", size: "large" },
+	{ filename: "wooden-deck-garden.jpg", alt: "Wooden deck overlooking a landscaped garden", size: "small" },
+	{ filename: "wooden-pergola-architecture.jpg", alt: "Modern wooden pergola in a landscaped garden", size: "large" },
+	{ filename: "zen-water-garden.jpg", alt: "Zen garden with a peaceful water feature", size: "small" },
 ];
 
 const projectsGallery = document.querySelector(".projects-gallery");
@@ -190,6 +193,8 @@ const modalData = [
 const modalOverlay = document.querySelector(".modal-overlay");
 const modalContainer = modalOverlay.querySelector(".modal-container");
 const modalCrossButton = modalContainer.querySelector(".modal-cross-button");
+const modalContactButton = modalContainer.querySelector(".modal-contact-button");
+
 const modalImage = modalContainer.querySelector(".modal-image");
 const modalTitle = modalContainer.querySelector(".modal-title");
 const modalSubtitle = modalContainer.querySelector(".modal-subtitle");
@@ -216,6 +221,7 @@ function openModal(service) {
 	modalList.innerHTML = generateFeatures(service.features);
 
 	modalOverlay.classList.add("modal-open");
+	console.log(1)
 }
 
 function closeModal() {
@@ -223,9 +229,59 @@ function closeModal() {
 }
 
 modalCrossButton.addEventListener("click", closeModal);
+modalContactButton.addEventListener("click", () => {
+	closeModal();
+	openContectModal();
+})
 
 offerItemButtons.forEach(button => {
 	button.addEventListener("click", function () {
 		openModal(modalData[+button.dataset.number]);
 	});
 });
+
+const modalFormOverlay = document.querySelector(".modal-form-overlay");
+const footerActionButton = document.querySelector(".footer-action-button");
+const modalForm = document.querySelector(".modal-form");
+const modalActionCrossButton = document.querySelector(".modal-form-cross-button");
+const modalFormButton = document.querySelector(".modal-form-button");
+const modalFormErrors = document.querySelectorAll(".modal-form-error");
+
+function openContectModal() {
+	modalFormOverlay.classList.add("modal-open");
+}
+
+function closeContectModal() {
+	modalFormOverlay.classList.remove("modal-open");
+}
+
+function handleSubmit(event) {
+	event.preventDefault();
+
+	if (modalForm.checkValidity()) {
+		iziToast.success({
+			message: "Dane już są «wysłane» na serwer",
+			position: "topRight"
+		});
+
+		modalFormErrors.forEach(errorParagraph => {
+			errorParagraph.classList.remove("error-displayed")
+		});
+
+		closeContectModal();
+		return;
+	} else {
+		iziToast.warning({
+			message: "Podaj wszystkie dane",
+			position: "topRight"
+		});
+
+		modalFormErrors.forEach(errorParagraph => {
+			errorParagraph.classList.add("error-displayed")
+		});
+	}
+}
+
+footerActionButton.addEventListener("click", openContectModal);
+modalActionCrossButton.addEventListener("click", closeContectModal);
+modalFormButton.addEventListener("click", (event) => handleSubmit(event));

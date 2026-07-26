@@ -167,8 +167,10 @@ button {
 }
 
 .search-input.disappear {
+	padding: 0;
 	width: 0;
 	border: 1px solid transparent;
+	pointer-events: none;
 }
 
 .details-icon {
@@ -859,11 +861,12 @@ button {
 	color: #f5f0ec;
 }
 
-.footer-action-link {
+.footer-action-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
+	border: none;
 	border-radius: 200px;
 	width: 208px;
 	height: 50px;
@@ -874,7 +877,6 @@ button {
 	font-size: 16px;
 	line-height: 1.5;
 	text-align: center;
-	text-decoration: none;
 	color: #f5f0ec;
 }
 
@@ -960,7 +962,8 @@ button {
 	height: 23px;
 }
 
-.modal-overlay {
+.modal-overlay,
+.modal-form-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -974,12 +977,14 @@ button {
 	background-color: rgba(46, 47, 66, 0.4);
 }
 
-.modal-overlay.modal-open {
+.modal-overlay.modal-open,
+.modal-form-overlay.modal-open {
 	opacity: 1;
 	pointer-events: auto;
 }
 
-.modal-container {
+.modal-container,
+.modal-form-container {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -996,7 +1001,8 @@ button {
 
 }
 
-.modal-cross-button {
+.modal-cross-button,
+.modal-form-cross-button {
 	position: absolute;
 	top: 16px;
 	right: 16px;
@@ -1009,7 +1015,8 @@ button {
 	cursor: pointer;
 }
 
-.modal-cross-1 {
+.modal-cross-1,
+.modal-form-cross-1 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -1021,7 +1028,8 @@ button {
 	border-radius: 25px;
 }
 
-.modal-cross-2 {
+.modal-cross-2,
+.modal-form-cross-2 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -1140,4 +1148,88 @@ button {
 	width: 242px;
 	height: 50px;
 	background: transparent;
+}
+
+.modal-form,
+.modal-form-image {
+	width: 50%;
+}
+
+.modal-form-heading {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 1.15;
+	letter-spacing: -0.05em;
+	color: #111;
+}
+
+.modal-form-paragraph {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #111;
+}
+
+.modal-form-error {
+	display: none;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #dd5555;
+}
+
+.modal-form-error.error-displayed {
+	display: block;
+}
+
+.modal-form-inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	margin-block: 32px;
+}
+
+.modal-form-input {
+	display: block;
+
+	border: 1px solid #1214171a;
+	border-radius: 12px;
+	width: 100%;
+	height: 54px;
+	padding: 16px 48px 16px 16px;
+
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #111;
+
+	margin-bottom: 8px;
+}
+
+.modal-form-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border: 1px solid #111;
+	border-radius: 200px;
+	margin-inline: auto;
+	width: 242px;
+	height: 50px;
+	background: transparent;
+}
+
+.modal-form-image {
+	border-radius: 20px;
+	object-fit: cover;
+	align-self: stretch;
 }
