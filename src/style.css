@@ -31,10 +31,21 @@ button {
 	max-width: 375px;
 }
 
+.lower-container {
+	margin-inline: auto;
+	padding-inline: 20px;
+	min-width: 320px;
+	max-width: 375px;
+}
+
 @media (min-width: 768px) {
 	.upper-container {
 		padding-inline: 32px;
 		max-width: 768px;
+	}
+
+	.lower-container {
+		max-width: 704px;
 	}
 }
 
@@ -43,12 +54,10 @@ button {
 		padding-inline: 89px;
 		max-width: 1440px;
 	}
-}
 
-.lower-container {
-	margin-inline: auto;
-	padding-inline: 200px;
-	max-width: 1440px;
+	.lower-container {
+		max-width: 1040px;
+	}
 }
 
 .header-page {}
@@ -1051,62 +1060,6 @@ button {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .projects {
 	position: relative;
 	background: #dcc1ab;
@@ -1320,47 +1273,6 @@ button {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .instagram {
 	padding-block: 60px;
 	background: #f5f0ec;
@@ -1372,11 +1284,26 @@ button {
 
 .instagram-wraper {
 	display: flex;
-	align-items: flex-end;
+	flex-direction: column;
+	/* align-items: flex-sta; */
 	gap: 64px;
 
-	padding: 120px 110px;
+	padding: 64px 32px;
 	background: #1b5b31;
+}
+
+@media (min-width: 768px) {
+	.instagram-wraper {
+		padding: 64px 64px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.instagram-wraper {
+		flex-direction: row;
+
+		padding: 120px 110px;
+	}
 }
 
 .instagram-heading {
@@ -1403,13 +1330,14 @@ button {
 	flex-direction: column;
 	gap: 24px;
 
-	width: 157px;
+	width: 100%;
 }
 
 .instagram-reference-text {
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
 	font-size: 16px;
+	text-align: center;
 	line-height: 1.5;
 	letter-spacing: -0.01em;
 	color: #f5f0ec;
@@ -1421,7 +1349,7 @@ button {
 	align-items: center;
 
 	border-radius: 200px;
-	width: 124px;
+	width: 100%;
 	height: 46px;
 	background: #f5f0ec;
 
@@ -1432,6 +1360,26 @@ button {
 	text-align: center;
 	text-decoration: none;
 	color: #1b5b31;
+}
+
+@media (min-width: 768px) {
+	.instagram-reference {
+		width: 157px;
+	}
+
+	.instagram-reference-text {
+		text-align: left;
+	}
+}
+
+@media (min-width: 1440px) {
+	.instagram-wraper {
+		align-items: flex-end;
+	}
+
+	.instagram-reference-link {
+		width: 124px;
+	}
 }
 
 .footer-page {
