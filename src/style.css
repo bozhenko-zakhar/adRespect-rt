@@ -724,7 +724,7 @@ button {
 
 .offer {
 	background: #f5f0ec;
-	padding-block: 60px;
+	padding-block: 64px;
 }
 
 .offer-container {
@@ -735,7 +735,7 @@ button {
 
 .offer-info {
 	margin-inline: auto;
-	margin-bottom: 60px;
+	margin-bottom: 64px;
 }
 
 .offer-eyebrow {
@@ -821,7 +821,7 @@ button {
 	letter-spacing: -0.05em;
 	color: #111;
 
-	margin-bottom: 12px;
+	margin-bottom: 16px;
 }
 
 .offer-item-desc {
@@ -832,7 +832,7 @@ button {
 	letter-spacing: -0.01em;
 	color: #111;
 
-	margin-bottom: 63px;
+	margin-bottom: 64px;
 }
 
 .offer-item-button {
@@ -870,10 +870,6 @@ button {
 	.offer-list {
 		align-items: center;
 	}
-
-	.offer-item {
-		width: 567px;
-	}
 }
 
 @media (min-width: 1440px) {
@@ -901,7 +897,7 @@ button {
 
 .about {
 	position: relative;
-	padding-block: 135px;
+	padding-block: 64px;
 
 	background: #1b5b31;
 }
@@ -919,7 +915,7 @@ button {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: calc(50% - 32px);
+	width: 100%;
 	height: 100%;
 
 	background-image: url("/about-background.jpg");
@@ -928,9 +924,34 @@ button {
 	background-size: cover;
 }
 
+.about-image::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+}
+
+@media (min-width: 1440px) {
+	.about-image::after {
+		background: rgba(0, 0, 0, 0);
+		pointer-events: none;
+	}
+}
+
+.about-image>* {
+	z-index: 1;
+}
+
+@media (min-width: 1440px) {
+	.about-image {
+		width: calc(50% - 32px);
+		height: 100%;
+	}
+}
+
 .about-content {
-	width: 596px;
-	padding-left: 96px;
+	position: relative;
 }
 
 .about-eyebrow {
@@ -955,7 +976,7 @@ button {
 	letter-spacing: -0.03em;
 	color: #f5f0ec;
 
-	margin-bottom: 40px;
+	margin-bottom: 48px;
 }
 
 .about-heading-emphasized {
@@ -971,7 +992,7 @@ button {
 	letter-spacing: -0.01em;
 	color: #f5f0ec;
 
-	margin-bottom: 72px;
+	margin-bottom: 64px;
 }
 
 .about-link {
@@ -982,7 +1003,6 @@ button {
 
 	border: 1px solid #f5f0ec;
 	border-radius: 200px;
-	width: 194px;
 	height: 50px;
 
 	font-weight: 400;
@@ -998,6 +1018,39 @@ button {
 	width: 16px;
 	height: 16px;
 }
+
+@media (min-width: 768px) {
+	.about-content {
+		width: 596px;
+	}
+
+	.about-link {
+		width: 194px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.about {
+		padding-block: 135px;
+	}
+
+	.about-image {
+		width: calc(50% - 32px);
+	}
+
+	.about-content {
+		margin-left: auto;
+	}
+
+	.about-heading {
+		margin-bottom: 48px;
+	}
+
+	.about-info {
+		margin-bottom: 72px;
+	}
+}
+
 
 .projects {
 	position: relative;
@@ -1624,6 +1677,7 @@ button {
 }
 
 @media (min-width: 768px) {
+
 	.modal-container,
 	.modal-form-container {
 		display: flex;
