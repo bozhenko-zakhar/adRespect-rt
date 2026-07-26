@@ -51,13 +51,13 @@ const slides = [
 	{
 		title: "Tworzymy przestrzenie pełne <span class='hero-heading-cutted'>Zieleni</span>",
 		description:
-			"Projektujemy ogrody, tarasy i strefy relaksu, które łączą nowoczesny design z funkcjonalnością. Dbamy o każdy detal – od koncepcji aż po realizację.",
+			"Projektujemy nowoczesne ogrody, komfortowe tarasy oraz unikalne strefy relaksu, łączące styl z funkcjonalnością. Dbamy o każdy, najmniejszy detal – od wstępnej koncepcji aż po realizację.",
 		background: "/hero-background-1.jpg",
 	},
 	{
-		title: "Ogród, który jest stworzony dla <span class='hero-heading-cutted'>Ciebie</span>",
+		title: "Estetyczna przestrzeń dla <span class='hero-heading-cutted'>Ciebie</span>",
 		description:
-			"Każdy projekt powstaje z myślą o komforcie i stylu życia naszych klientów. Tworzymy miejsca, które zachwycają estetyką przez cały rok.",
+			"Każdy projekt powstaje z myślą o wyjątkowym komforcie i stylu życia naszych klientów. Tworzymy unikalne miejsca, które zachwycają swoją estetyką i funkcjonalnością przez cały rok.",
 		background: "/hero-background-2.jpg",
 	},
 ];
