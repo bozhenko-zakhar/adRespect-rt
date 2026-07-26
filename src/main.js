@@ -46,33 +46,35 @@ const slides = [
 		title: "Nowoczesna aranżacja <span class='hero-heading-cutted'>Twojego ogrodu</span>",
 		description:
 			"Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.",
-		background: "/hero-background-0.jpg",
 	},
 	{
 		title: "Tworzymy przestrzenie pełne <span class='hero-heading-cutted'>Zieleni</span>",
 		description:
 			"Projektujemy nowoczesne ogrody, komfortowe tarasy oraz unikalne strefy relaksu, łączące styl z funkcjonalnością. Dbamy o każdy, najmniejszy detal – od wstępnej koncepcji aż po realizację.",
-		background: "/hero-background-1.jpg",
 	},
 	{
 		title: "Estetyczna przestrzeń dla <span class='hero-heading-cutted'>Ciebie</span>",
 		description:
 			"Każdy projekt powstaje z myślą o wyjątkowym komforcie i stylu życia naszych klientów. Tworzymy unikalne miejsca, które zachwycają swoją estetyką i funkcjonalnością przez cały rok.",
-		background: "/hero-background-2.jpg",
 	},
 ];
 
 function showSlide(slide) {
 	heroHeading.innerHTML = `${slide.title}`;
 	heroInfo.textContent = slide.description;
-	heroImage.style.backgroundImage = `url(${slide.background}`;
+
+	heroImage.classList.toggle(`image-${currentSlide}`);
 }
 
 buttonPrevious.addEventListener("click", function () {
 	currentSlide--;
 
-	if (currentSlide < 0)
+	if (currentSlide < 0) {
 		currentSlide = slides.length - 1;
+		heroImage.classList.toggle("image-0");
+	} else {
+		heroImage.classList.toggle(`image-${currentSlide + 1}`);
+	}
 
 	showSlide(slides[currentSlide])
 })
@@ -80,31 +82,35 @@ buttonPrevious.addEventListener("click", function () {
 buttonNext.addEventListener("click", function () {
 	currentSlide++;
 
-	if (currentSlide >= slides.length)
+	if (currentSlide >= slides.length) {
 		currentSlide = 0;
+		heroImage.classList.toggle("image-2");
+	} else {
+		heroImage.classList.toggle(`image-${currentSlide - 1}`);
+	}
 
 	showSlide(slides[currentSlide])
 });
 
 const images = [
-	{ filename: "architectural-courtyard.jpg", alt: "Modern landscaped courtyard", size: "large" },
-	{ filename: "bamboo-garden-architecture.jpg", alt: "Bamboo garden with contemporary landscaping", size: "small" },
-	{ filename: "contemporary-pergola.jpg", alt: "Contemporary wooden pergola", size: "medium" },
-	{ filename: "flower-arch-garden.jpg", alt: "Garden pathway beneath a flowering arch", size: "medium" },
-	{ filename: "indoor-tropical-courtyard.jpg", alt: "Indoor tropical courtyard filled with lush greenery", size: "medium" },
-	{ filename: "koi-pond-garden.jpg", alt: "Peaceful koi pond surrounded by garden plants", size: "large" },
-	{ filename: "luxury villa courtyard.jpg", alt: "Modern villa courtyard with landscaped garden", size: "small" },
-	{ filename: "luxury-pool-villa.jpg", alt: "Contemporary villa with an outdoor swimming pool", size: "large" },
-	{ filename: "minimalist-landscape-architecture.jpg", alt: "Minimalist landscape garden design", size: "small" },
-	{ filename: "modern-botanical-garden.jpg", alt: "Modern botanical garden with diverse plants", size: "large" },
-	{ filename: "modern-patio-tropical.jpg", alt: "Tropical patio with modern outdoor design", size: "small" },
-	{ filename: "reflection-pool-architecture.jpg", alt: "Reflecting pool beside contemporary architecture", size: "medium" },
-	{ filename: "tropical-landscaping.jpg", alt: "Lush tropical garden landscaping", size: "medium" },
-	{ filename: "tropical-modern-garden.jpg", alt: "Modern tropical garden with natural greenery", size: "medium" },
-	{ filename: "tropical-pathway.jpg", alt: "Stone pathway through a tropical garden", size: "large" },
-	{ filename: "wooden-deck-garden.jpg", alt: "Wooden deck overlooking a landscaped garden", size: "small" },
-	{ filename: "wooden-pergola-architecture.jpg", alt: "Modern wooden pergola in a landscaped garden", size: "large" },
-	{ filename: "zen-water-garden.jpg", alt: "Zen garden with a peaceful water feature", size: "small" },
+	{ imageName: "architectural-courtyard", alt: "Modern landscaped courtyard", size: "large" },
+	{ imageName: "bamboo-garden-architecture", alt: "Bamboo garden with contemporary landscaping", size: "small" },
+	{ imageName: "contemporary-pergola", alt: "Contemporary wooden pergola", size: "medium" },
+	{ imageName: "flower-arch-garden", alt: "Garden pathway beneath a flowering arch", size: "medium" },
+	{ imageName: "indoor-tropical-courtyard", alt: "Indoor tropical courtyard filled with lush greenery", size: "medium" },
+	{ imageName: "koi-pond-garden", alt: "Peaceful koi pond surrounded by garden plants", size: "large" },
+	{ imageName: "luxury villa courtyard", alt: "Modern villa courtyard with landscaped garden", size: "small" },
+	{ imageName: "luxury-pool-villa", alt: "Contemporary villa with an outdoor swimming pool", size: "large" },
+	{ imageName: "minimalist-landscape-architecture", alt: "Minimalist landscape garden design", size: "small" },
+	{ imageName: "modern-botanical-garden", alt: "Modern botanical garden with diverse plants", size: "large" },
+	{ imageName: "modern-patio-tropical", alt: "Tropical patio with modern outdoor design", size: "small" },
+	{ imageName: "reflection-pool-architecture", alt: "Reflecting pool beside contemporary architecture", size: "medium" },
+	{ imageName: "tropical-landscaping", alt: "Lush tropical garden landscaping", size: "medium" },
+	{ imageName: "tropical-modern-garden", alt: "Modern tropical garden with natural greenery", size: "medium" },
+	{ imageName: "tropical-pathway", alt: "Stone pathway through a tropical garden", size: "large" },
+	{ imageName: "wooden-deck-garden", alt: "Wooden deck overlooking a landscaped garden", size: "small" },
+	{ imageName: "wooden-pergola-architecture", alt: "Modern wooden pergola in a landscaped garden", size: "large" },
+	{ imageName: "zen-water-garden", alt: "Zen garden with a peaceful water feature", size: "small" },
 ];
 
 const projectsGallery = document.querySelector(".projects-gallery");
@@ -115,12 +121,13 @@ function generateGalleryItems(items) {
 		<li class="projects-gallery-item projects-gallery-item-${image.size}">
 			<a 
 				class="glightbox" 
-				href="/glightbox/${image.filename}"
+				href="/glightbox/${image.imageName}"
 				data-gallery="projects"
 			>
 				<img
 					class="projects-gallery-image"
-					src="/gallery/${image.filename}"
+					srcset="/gallery/${image.imageName}.webp 1x, /gallery/${image.imageName}@2x.webp 2x"
+					srcset="/gallery/${image.imageName}"
 					alt="${image.alt}"
 				>
 			</a>
@@ -148,7 +155,7 @@ projectsGradientButton.addEventListener("click", function () {
 
 const modalData = [
 	{
-		image: "/projects.jpg",
+		image: "/projects.webp",
 		title: "Projekty",
 		subtitle: "Projektujemy ogrody dopasowane do Twojego stylu życia",
 		description: "Tworzymy indywidualne projekty ogrodów, tarasów oraz stref wypoczynkowych. Każda koncepcja powstaje z uwzględnieniem ukształtowania terenu, istniejącej roślinności oraz oczekiwań klienta.",
@@ -162,7 +169,7 @@ const modalData = [
 		]
 	},
 	{
-		image: "/landscape-designer.jpg",
+		image: "/landscape-designer.webp",
 		title: "Wizualizacje",
 		subtitle: "Zobacz swój ogród, zanim powstanie",
 		description: "Przygotowujemy realistyczne wizualizacje 3D, które pozwalają zobaczyć przyszły ogród z różnych perspektyw oraz wirtualnie przejść przez projekt jeszcze przed rozpoczęciem realizacji.",
@@ -176,7 +183,7 @@ const modalData = [
 		]
 	},
 	{
-		image: "/modern-garden.jpg",
+		image: "/modern-garden.webp",
 		title: "Realizacje",
 		subtitle: "Realizujemy projekty od pierwszego szkicu do ostatniego detalu",
 		description: "Dbamy o każdy etap wykonania inwestycji, wykorzystując nowoczesny sprzęt, sprawdzone technologie oraz wysokiej jakości materiały. Dzięki temu gotowy ogród zachwyca wyglądem i funkcjonalnością przez wiele lat.",
@@ -299,7 +306,6 @@ burgerMenu.addEventListener("click", function () {
 	burgerMenu.classList.toggle("open-burger");
 	logo.classList.toggle("open-burger");
 	headerModalOverlay.classList.toggle("active");
-	searchIcon.classList.toggle("appearing");
 
 	document.body.classList.toggle("not-scroll");
 })

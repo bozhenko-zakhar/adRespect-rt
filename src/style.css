@@ -374,7 +374,7 @@ button {
 	left: 768px;
 	width: 100%;
 	height: 100%;
-	z-index: 1;
+	z-index: 2;
 
 	display: flex;
 	flex-direction: column;
@@ -392,7 +392,7 @@ button {
 .header-modal-container {
 	position: relative;
 	width: 100%;
-	top: 72px;
+	top: 96px;
 }
 
 .header-modal-nav {}
@@ -520,11 +520,6 @@ button {
 @media (min-width: 1440px) {
 	.hero-heading {
 		width: 599px;
-		font-size: 60px;
-	}
-
-	.hero-info {
-		font-size: 16px;
 	}
 }
 
@@ -639,10 +634,35 @@ button {
 	width: 100%;
 	height: 100%;
 
-	background-image: url("/hero-background-0.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.hero-image.image-0 {
+	background-image: url("/background/hero-background-0.webp");
+}
+
+.hero-image.image-1 {
+	background-image: url("/background/hero-background-1.webp");
+}
+
+.hero-image.image-2 {
+	background-image: url("/background/hero-background-2.webp");
+}
+
+@media (min-resolution: 192dpi) {
+	.hero-image.image-0 {
+		background-image: url("/background/hero-background-0@2x.webp");
+	}
+
+	.hero-image.image-1 {
+		background-image: url("/background/hero-background-1@2x.webp");
+	}
+
+	.hero-image.image-2 {
+		background-image: url("/background/hero-background-2@2x.webp");
+	}
 }
 
 .hero-image::after {
@@ -927,10 +947,16 @@ button {
 	width: 100%;
 	height: 100%;
 
-	background-image: url("/about-background.jpg");
+	background-image: url("/background/about-background.webp");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+@media (min-resolution: 192dpi) {
+	.about-image {
+		background-image: url("/background/about-background@2x.webp");
+	}
 }
 
 .about-image::after {
@@ -1125,7 +1151,7 @@ button {
 
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 1.5;
 	text-align: center;
 	color: #111;
@@ -1138,21 +1164,9 @@ button {
 }
 
 .glightbox-container .gslide-image img {
-	width: 320px;
+	width: 1000px;
 	height: 80vh;
 	object-fit: cover;
-}
-
-@media (min-width: 768px) {
-	.glightbox-container .gslide-image img {
-		width: 704px;
-	}
-}
-
-@media (min-width: 1440px) {
-	.glightbox-container .gslide-image img {
-		width: 1262px;
-	}
 }
 
 .projects-gallery {
@@ -1804,9 +1818,6 @@ body.not-scroll {
 }
 
 .modal-contact-button {
-	/* position: absolute;
-	bottom: 0; */
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1942,9 +1953,5 @@ body.not-scroll {
 
 		width: 1262px;
 		padding: 64px;
-	}
-
-	.modal-item {
-		font-size: 14px;
 	}
 }
