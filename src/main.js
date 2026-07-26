@@ -27,9 +27,10 @@ const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
 
 searchButton.addEventListener("click", function () {
-	searchIcon.classList.toggle("disappear");
-	searchCross.classList.toggle("disappear");
-	searchInput.classList.toggle("disappear");
+	searchButton.classList.toggle("appearing")
+	searchIcon.classList.toggle("appearing");
+	searchCross.classList.toggle("appearing");
+	searchInput.classList.toggle("appearing");
 });
 
 
@@ -271,7 +272,7 @@ function handleSubmit(event) {
 		closeContectModal();
 		return;
 	} else {
-		iziToast.warning({
+		iziToast.error({
 			message: "Podaj wszystkie dane",
 			position: "topRight"
 		});
@@ -285,3 +286,15 @@ function handleSubmit(event) {
 footerActionButton.addEventListener("click", openContectModal);
 modalActionCrossButton.addEventListener("click", closeContectModal);
 modalFormButton.addEventListener("click", (event) => handleSubmit(event));
+
+const headerNavList = document.querySelector(".header-nav-list");
+const burgerMenu = document.querySelector(".burger-menu");
+const headerModalOverlay = document.querySelector(".header-modal-overlay");
+const logo = document.querySelector(".logo");
+
+burgerMenu.addEventListener("click", function () {
+	burgerMenu.classList.toggle("open-burger");
+	logo.classList.toggle("open-burger");
+	headerModalOverlay.classList.toggle("active");
+	searchIcon.classList.toggle("appearing")
+})

@@ -27,8 +27,8 @@
 					</svg>
 				</a>
 
-				<div class="header-nav-items">
-					<ul class="header-nav-links">
+				<div class="header-interface">
+					<ul class="header-nav-list">
 						<li class="header-nav-item" data-dropdown>
 							<a class="header-nav-link details" href="#offer">
 								Oferta
@@ -63,21 +63,69 @@
 					</ul>
 
 					<form class="search-form">
-						<input type="text" class="search-input disappear">
+						<input type="text" class="search-input appearing">
 
 						<button type="button" class="search-button">
-							<svg class="search-icon">
+							<svg class="search-icon appearing">
 								<use href="/icons/search.svg"></use>
 							</svg>
 
-							<div class="search-cross disappear">
+							<div class="search-cross">
 								<span class="search-cross-1"></span>
 								<span class="search-cross-2"></span>
 							</div>
 						</button>
 					</form>
+
+					<button class="burger-menu">
+						<span class="burger-menu-1"></span>
+						<span class="burger-menu-2"></span>
+						<span class="burger-menu-3"></span>
+					</button>
 				</div>
 			</nav>
+		</div>
+
+		<div class="header-modal-overlay">
+			<div class="header-modal-container">
+				<div class="upper-container">
+					<nav class="header-modal-nav">
+						<ul class="header-modal-nav-list">
+							<li class="header-modal-nav-item" data-dropdown>
+								<a class="header-modal-nav-link details" href="#offer">
+									Oferta
+									<svg class="header-modal-details-icon">
+										<use href="/icons/details.svg"></use>
+									</svg>
+								</a>
+								<div class="header-modal-content">
+									<a class="header-modal-link" href="#offer">
+										Projekty
+										<svg class="header-modal-icon">
+											<use href="/icons/arrow-right.svg"></use>
+										</svg>
+									</a>
+									<a class="header-modal-link" href="#offer">
+										Wizualizacje
+										<svg class="header-modal-icon">
+											<use href="/icons/arrow-right.svg"></use>
+										</svg>
+									</a>
+									<a class="header-modal-link" href="#offer">
+										Realizacje
+										<svg class="header-modal-icon">
+											<use href="/icons/arrow-right.svg"></use>
+										</svg>
+									</a>
+								</div>
+							</li>
+							<li class="header-modal-nav-item"><a class="header-modal-nav-link" href="#about">O firmie</a></li>
+							<li class="header-modal-nav-item"><a class="header-modal-nav-link" href="#projects">Realizacje</a></li>
+							<li class="header-modal-nav-item"><a class="header-modal-nav-link" href="#instagram">Kontakt</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
 		</div>
 	</header>
 
