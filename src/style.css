@@ -451,60 +451,6 @@ button {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hero {
 	position: relative;
 	padding-block: 72px;
@@ -776,55 +722,9 @@ button {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .offer {
 	background: #f5f0ec;
-	padding-block: 120px;
+	padding-block: 60px;
 }
 
 .offer-container {
@@ -834,9 +734,8 @@ button {
 }
 
 .offer-info {
-	width: 1040px;
 	margin-inline: auto;
-	margin-bottom: 96px;
+	margin-bottom: 60px;
 }
 
 .offer-eyebrow {
@@ -858,7 +757,7 @@ button {
 	letter-spacing: -0.03em;
 	color: #111;
 
-	margin-bottom: 32px;
+	margin-bottom: 16px;
 }
 
 .offer-heading-emphasized {
@@ -867,8 +766,6 @@ button {
 }
 
 .offer-desc {
-	width: 709px;
-
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
 	font-size: 16px;
@@ -879,14 +776,15 @@ button {
 
 .offer-list {
 	display: flex;
-	gap: 64px;
+	flex-direction: column;
+	gap: 40px;
 }
 
 .offer-item {
 	display: flex;
 	flex-direction: column;
 
-	width: 378px;
+	width: 100%;
 
 	border-radius: 28px;
 	padding: 48px 40px;
@@ -962,6 +860,43 @@ button {
 	fill: currentColor;
 	width: 16px;
 	height: 16px;
+}
+
+@media (min-width: 768px) {
+	.offer-desc {
+		width: 709px;
+	}
+
+	.offer-list {
+		align-items: center;
+	}
+
+	.offer-item {
+		width: 567px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.offer {
+		padding-block: 120px;
+	}
+
+	.offer-info {
+		width: 1040px;
+		margin-bottom: 96px;
+	}
+
+	.offfer-heading {
+		margin-bottom: 32px;
+	}
+
+	.offer-list {
+		flex-direction: row;
+	}
+
+	.offer-item {
+		width: 378px;
+	}
 }
 
 .about {
@@ -1445,14 +1380,13 @@ button {
 	transform: translate(-50%, -50%);
 
 	display: flex;
-	align-items: flex-start;
-	gap: 64px;
+	flex-direction: column;
+	gap: 32px;
 
 	border-radius: 20px;
 	background-color: #fff;
-	width: 1262px;
-	padding: 64px;
-
+	width: 375px;
+	padding: 64px 32px;
 }
 
 .modal-cross-button,
@@ -1469,7 +1403,8 @@ button {
 	cursor: pointer;
 }
 
-.modal-cross-1 {
+.modal-cross-1,
+.modal-form-cross-1 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -1481,7 +1416,8 @@ button {
 	border-radius: 25px;
 }
 
-.modal-cross-2 {
+.modal-cross-2,
+.modal-form-cross-2 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -1494,15 +1430,17 @@ button {
 }
 
 .modal-image {
-	width: 50%;
-	height: 450px;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	align-self: stretch;
 
 	border-radius: 20px;
 }
 
 .modal-info {
 	position: relative;
-	width: 50%;
+	width: 100%;
 
 	align-self: stretch;
 }
@@ -1537,7 +1475,7 @@ button {
 	letter-spacing: -0.01em;
 	color: #111;
 
-	margin-bottom: 4px;
+	margin-bottom: 8px;
 }
 
 .modal-description {
@@ -1575,19 +1513,19 @@ button {
 	border-radius: 200px;
 	background: transparent;
 	padding-inline: 8px;
-	width: fit-content;
+	width: 100%;
 
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 1.5;
 	letter-spacing: -0.01em;
 	color: #1b5b31;
 }
 
 .modal-contact-button {
-	position: absolute;
-	bottom: 0;
+	/* position: absolute;
+	bottom: 0; */
 
 	display: flex;
 	align-items: center;
@@ -1596,14 +1534,14 @@ button {
 	border: 1px solid #111;
 	border-radius: 200px;
 	margin-inline: auto;
-	width: 242px;
+	width: 100%;
 	height: 50px;
 	background: transparent;
 }
 
 .modal-form,
 .modal-form-image {
-	width: 50%;
+	width: 100%;
 }
 
 .modal-form-heading {
@@ -1683,4 +1621,49 @@ button {
 	border-radius: 20px;
 	object-fit: cover;
 	align-self: stretch;
+}
+
+@media (min-width: 768px) {
+	.modal-container,
+	.modal-form-container {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 32px;
+
+		padding: 64px 32px;
+		width: 768px;
+	}
+
+	.modal-image {
+		width: calc(50% - 16px);
+		height: auto;
+	}
+
+	.modal-info {
+		width: 50%;
+	}
+
+	.modal-form-image {
+		width: calc(50% - 16px);
+	}
+
+	.modal-form {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1440px) {
+
+	.modal-container,
+	.modal-form-container {
+		gap: 32px;
+
+		width: 1262px;
+		padding: 64px;
+	}
+
+	.modal-item {
+		font-size: 14px;
+	}
 }
