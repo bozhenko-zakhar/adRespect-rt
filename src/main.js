@@ -222,11 +222,12 @@ function openModal(service) {
 	modalList.innerHTML = generateFeatures(service.features);
 
 	modalOverlay.classList.add("modal-open");
-	console.log(1)
+	document.body.classList.toggle("not-scroll")
 }
 
 function closeModal() {
 	modalOverlay.classList.remove("modal-open");
+	document.body.classList.toggle("not-scroll");
 }
 
 modalCrossButton.addEventListener("click", closeModal);
@@ -250,10 +251,12 @@ const modalFormErrors = document.querySelectorAll(".modal-form-error");
 
 function openContectModal() {
 	modalFormOverlay.classList.add("modal-open");
+	document.body.classList.toggle("not-scroll");
 }
 
 function closeContectModal() {
 	modalFormOverlay.classList.remove("modal-open");
+	document.body.classList.toggle("not-scroll");
 }
 
 function handleSubmit(event) {
@@ -296,5 +299,7 @@ burgerMenu.addEventListener("click", function () {
 	burgerMenu.classList.toggle("open-burger");
 	logo.classList.toggle("open-burger");
 	headerModalOverlay.classList.toggle("active");
-	searchIcon.classList.toggle("appearing")
+	searchIcon.classList.toggle("appearing");
+
+	document.body.classList.toggle("not-scroll");
 })
