@@ -21,8 +21,8 @@
 	<header class="header-page">
 		<div class="upper-container">
 			<nav class="header-nav">
-				<a class="logo" href="./index.html">
-					<svg class="logo-icon">
+				<a class="header-nav-logo" href="./index.html">
+					<svg class="header-nav-logo-icon">
 						<use href="/icons/giarddesign.svg"></use>
 					</svg>
 				</a>
@@ -63,17 +63,17 @@
 					</ul>
 
 					<form class="search-form">
-						<input type="text" class="search-input appearing">
+						<input type="text" class="search-input search-open">
 
 						<button type="button" class="search-button">
-							<svg class="search-icon appearing">
+							<svg class="search-icon search-open">
 								<use href="/icons/search.svg"></use>
 							</svg>
 
-							<div class="search-cross">
+							<span class="search-cross">
 								<span class="search-cross-1"></span>
 								<span class="search-cross-2"></span>
-							</div>
+							</span>
 						</button>
 					</form>
 
@@ -130,7 +130,7 @@
 	</header>
 
 	<main class="main-page">
-		<section class="hero" id="hero">
+		<section class="hero-section" id="hero">
 			<div class="upper-container">
 				<div class="hero-image image-0">
 					<div class="hero-image-buttons">
@@ -148,7 +148,7 @@
 				</div>
 
 				<div class="hero-content">
-					<h1 class="hero-heading">Nowoczesna aranżacja <span class="hero-heading-cutted">Twojego ogrodu</span></h1>
+					<h1 class="hero-heading">Nowoczesna aranżacja <span>Twojego ogrodu</span></h1>
 					<p class="hero-info">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy
 						kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
 
@@ -258,12 +258,12 @@
 				</div>
 
 				<ul class="projects-gallery gradient">
-					<button type="button" class="projects-gradient-button">
+					<li aria-label="przycinek «Rozwiń»" class="projects-gradient-button">
 						Rozwiń
 						<svg class="projects-gradient-icon">
 							<use href="/icons/arrow-down.svg"></use>
 						</svg>
-					</button>
+					</li>
 
 					<li class="projects-gallery-sizer"></li>
 
@@ -439,7 +439,8 @@
 				<span class="modal-form-cross-2"></span>
 			</div>
 
-			<img class="modal-form-image" src="/customer-service.jpg" alt="Człowiek nabliża się, trzymając tablet na ręce">
+			<img class="modal-form-image" srcset="/customer-service.webp 1x, /customer-service@2x.webp 2x"
+				src="/customer-service.webp" alt="Człowiek nabliża się, trzymając tablet na ręce">
 
 			<form class="modal-form">
 				<h2 class="modal-form-heading">Porozmawiajmy o Twoim ogrodzie</h2>

@@ -1,5 +1,6 @@
 import imagesLoaded from "imagesloaded";
 import Masonry from "masonry-layout";
+
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.css";
 
@@ -21,18 +22,78 @@ imagesLoaded(gallery, function () {
 	});
 });
 
+
+
+
+
+
+
+
+
+
+
 const searchIcon = document.querySelector(".search-icon");
 const searchCross = document.querySelector(".search-cross");
 const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
 
 searchButton.addEventListener("click", function () {
-	searchButton.classList.toggle("appearing")
-	searchIcon.classList.toggle("appearing");
-	searchCross.classList.toggle("appearing");
-	searchInput.classList.toggle("appearing");
+	searchButton.classList.toggle("search-open")
+	searchIcon.classList.toggle("search-open");
+	searchCross.classList.toggle("search-open");
+	searchInput.classList.toggle("search-open");
 });
 
+
+
+
+
+
+
+
+
+
+
+
+const headerNavList = document.querySelector(".header-nav-list");
+const burgerMenu = document.querySelector(".burger-menu");
+const headerModalOverlay = document.querySelector(".header-modal-overlay");
+const logo = document.querySelector(".header-nav-logo");
+
+burgerMenu.addEventListener("click", function () {
+	burgerMenu.classList.toggle("open-burger");
+	logo.classList.toggle("open-burger");
+	headerModalOverlay.classList.toggle("header-modal-open");
+
+	document.body.classList.toggle("not-scroll");
+});
+
+
+
+
+
+
+
+
+
+
+const slides = [
+	{
+		title: "Nowoczesna aranżacja <span>Twojego ogrodu</span>",
+		description:
+			"Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.",
+	},
+	{
+		title: "Aranżujemy zielone <span>Mikrośrodowiska</span>",
+		description:
+			"Projektujemy nowoczesne ogrody, komfortowe tarasy i unikalne strefy relaksu, łączące styl z funkcjonalnością. Dbamy o detal – od koncepcji po realizację.",
+	},
+	{
+		title: "Estetyczna przestrzeń dla <span>Ciebie</span>",
+		description:
+			"Projektujemy nowoczesne ogrody, komfortowe tarasy i unikalne strefy relaksu, łączące styl z funkcjonalnością. Dbamy o każdy detal – od koncepcji po realizację.",
+	},
+];
 
 const heroHeading = document.querySelector(".hero-heading")
 const heroInfo = document.querySelector(".hero-info")
@@ -41,29 +102,11 @@ const buttonPrevious = document.querySelectorAll(".hero-image-button")[0]
 const buttonNext = document.querySelectorAll(".hero-image-button")[1]
 
 let currentSlide = 0;
-const slides = [
-	{
-		title: "Nowoczesna aranżacja <span class='hero-heading-cutted'>Twojego ogrodu</span>",
-		description:
-			"Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.",
-	},
-	{
-		title: "Tworzymy przestrzenie pełne <span class='hero-heading-cutted'>Zieleni</span>",
-		description:
-			"Projektujemy nowoczesne ogrody, komfortowe tarasy oraz unikalne strefy relaksu, łączące styl z funkcjonalnością. Dbamy o każdy, najmniejszy detal – od wstępnej koncepcji aż po realizację.",
-	},
-	{
-		title: "Estetyczna przestrzeń dla <span class='hero-heading-cutted'>Ciebie</span>",
-		description:
-			"Każdy projekt powstaje z myślą o wyjątkowym komforcie i stylu życia naszych klientów. Tworzymy unikalne miejsca, które zachwycają swoją estetyką i funkcjonalnością przez cały rok.",
-	},
-];
 
 function showSlide(slide) {
 	heroHeading.innerHTML = `${slide.title}`;
 	heroInfo.textContent = slide.description;
-
-	heroImage.classList.toggle(`image-${currentSlide}`);
+	heroImage.classList.add(`image-${currentSlide}`);
 }
 
 buttonPrevious.addEventListener("click", function () {
@@ -71,9 +114,9 @@ buttonPrevious.addEventListener("click", function () {
 
 	if (currentSlide < 0) {
 		currentSlide = slides.length - 1;
-		heroImage.classList.toggle("image-0");
+		heroImage.classList.remove("image-0");
 	} else {
-		heroImage.classList.toggle(`image-${currentSlide + 1}`);
+		heroImage.classList.remove(`image-${currentSlide + 1}`);
 	}
 
 	showSlide(slides[currentSlide])
@@ -84,13 +127,24 @@ buttonNext.addEventListener("click", function () {
 
 	if (currentSlide >= slides.length) {
 		currentSlide = 0;
-		heroImage.classList.toggle("image-2");
+		heroImage.classList.remove("image-2");
 	} else {
-		heroImage.classList.toggle(`image-${currentSlide - 1}`);
+		heroImage.classList.remove(`image-${currentSlide - 1}`);
 	}
 
 	showSlide(slides[currentSlide])
 });
+
+
+
+
+
+
+
+
+
+
+
 
 const images = [
 	{ imageName: "architectural-courtyard", alt: "Modern landscaped courtyard", size: "large" },
@@ -99,7 +153,7 @@ const images = [
 	{ imageName: "flower-arch-garden", alt: "Garden pathway beneath a flowering arch", size: "medium" },
 	{ imageName: "indoor-tropical-courtyard", alt: "Indoor tropical courtyard filled with lush greenery", size: "medium" },
 	{ imageName: "koi-pond-garden", alt: "Peaceful koi pond surrounded by garden plants", size: "large" },
-	{ imageName: "luxury villa courtyard", alt: "Modern villa courtyard with landscaped garden", size: "small" },
+	{ imageName: "luxury-villa courtyard", alt: "Modern villa courtyard with landscaped garden", size: "small" },
 	{ imageName: "luxury-pool-villa", alt: "Contemporary villa with an outdoor swimming pool", size: "large" },
 	{ imageName: "minimalist-landscape-architecture", alt: "Minimalist landscape garden design", size: "small" },
 	{ imageName: "modern-botanical-garden", alt: "Modern botanical garden with diverse plants", size: "large" },
@@ -114,20 +168,20 @@ const images = [
 ];
 
 const projectsGallery = document.querySelector(".projects-gallery");
-const projectsGradientButton = document.querySelector(".projects-gradient-button");
+const projectsGradientButton = projectsGallery.querySelector(".projects-gradient-button");
 
 function generateGalleryItems(items) {
 	return items.map(image => `
 		<li class="projects-gallery-item projects-gallery-item-${image.size}">
 			<a 
 				class="glightbox" 
-				href="/glightbox/${image.imageName}"
+				href="/glightbox/${image.imageName}.webp"
 				data-gallery="projects"
 			>
 				<img
 					class="projects-gallery-image"
 					srcset="/gallery/${image.imageName}.webp 1x, /gallery/${image.imageName}@2x.webp 2x"
-					srcset="/gallery/${image.imageName}"
+					src="/gallery/${image.imageName}.webp"
 					alt="${image.alt}"
 				>
 			</a>
@@ -153,9 +207,20 @@ projectsGradientButton.addEventListener("click", function () {
 	}
 });
 
+
+
+
+
+
+
+
+
+
+
+
 const modalData = [
 	{
-		image: "/projects.webp",
+		image: "/projects",
 		title: "Projekty",
 		subtitle: "Projektujemy ogrody dopasowane do Twojego stylu życia",
 		description: "Tworzymy indywidualne projekty ogrodów, tarasów oraz stref wypoczynkowych. Każda koncepcja powstaje z uwzględnieniem ukształtowania terenu, istniejącej roślinności oraz oczekiwań klienta.",
@@ -169,7 +234,7 @@ const modalData = [
 		]
 	},
 	{
-		image: "/landscape-designer.webp",
+		image: "/landscape-designer",
 		title: "Wizualizacje",
 		subtitle: "Zobacz swój ogród, zanim powstanie",
 		description: "Przygotowujemy realistyczne wizualizacje 3D, które pozwalają zobaczyć przyszły ogród z różnych perspektyw oraz wirtualnie przejść przez projekt jeszcze przed rozpoczęciem realizacji.",
@@ -183,7 +248,7 @@ const modalData = [
 		]
 	},
 	{
-		image: "/modern-garden.webp",
+		image: "/modern-garden",
 		title: "Realizacje",
 		subtitle: "Realizujemy projekty od pierwszego szkicu do ostatniego detalu",
 		description: "Dbamy o każdy etap wykonania inwestycji, wykorzystując nowoczesny sprzęt, sprawdzone technologie oraz wysokiej jakości materiały. Dzięki temu gotowy ogród zachwyca wyglądem i funkcjonalnością przez wiele lat.",
@@ -212,15 +277,16 @@ const modalList = modalContainer.querySelector(".modal-list");
 
 const offerItemButtons = document.querySelectorAll(".offer-item-button");
 
-
 function generateFeatures(features) {
 	return (
-		features.map(feature => `<li class="modal-item">${feature}</li>`).join("")
+		features.map(feature =>
+			`<li class="modal-item">${feature}</li>`).join("")
 	)
 }
 
 function openModal(service) {
-	modalImage.src = service.image;
+	modalImage.srcset = `${service.image}.webp 1x, ${service.image}@2x.webp 2x`
+	modalImage.src = service.image + ".webp";
 	modalImage.alt = "Image that represents " + service.title.toLocaleLowerCase();
 	modalTitle.textContent = service.title;
 	modalSubtitle.textContent = service.subtitle;
@@ -229,18 +295,18 @@ function openModal(service) {
 	modalList.innerHTML = generateFeatures(service.features);
 
 	modalOverlay.classList.add("modal-open");
-	document.body.classList.toggle("not-scroll")
+	document.body.classList.add("not-scroll")
 }
 
 function closeModal() {
 	modalOverlay.classList.remove("modal-open");
-	document.body.classList.toggle("not-scroll");
+	document.body.classList.remove("not-scroll");
 }
 
 modalCrossButton.addEventListener("click", closeModal);
 modalContactButton.addEventListener("click", () => {
 	closeModal();
-	openContectModal();
+	openConnectModal();
 })
 
 offerItemButtons.forEach(button => {
@@ -249,21 +315,32 @@ offerItemButtons.forEach(button => {
 	});
 });
 
-const modalFormOverlay = document.querySelector(".modal-form-overlay");
-const footerActionButton = document.querySelector(".footer-action-button");
-const modalForm = document.querySelector(".modal-form");
-const modalActionCrossButton = document.querySelector(".modal-form-cross-button");
-const modalFormButton = document.querySelector(".modal-form-button");
-const modalFormErrors = document.querySelectorAll(".modal-form-error");
 
-function openContectModal() {
+
+
+
+
+
+
+
+
+
+const modalFormOverlay = document.querySelector(".modal-form-overlay");
+const modalForm = modalFormOverlay.querySelector(".modal-form");
+const modalFormButton = modalForm.querySelector(".modal-form-button");
+const modalFormErrors = modalForm.querySelectorAll(".modal-form-error");
+
+const modalActionCrossButton = document.querySelector(".modal-form-cross-button");
+const footerActionButton = document.querySelector(".footer-action-button");
+
+function openConnectModal() {
 	modalFormOverlay.classList.add("modal-open");
-	document.body.classList.toggle("not-scroll");
+	document.body.classList.add("not-scroll");
 }
 
-function closeContectModal() {
+function closeConnectModal() {
 	modalFormOverlay.classList.remove("modal-open");
-	document.body.classList.toggle("not-scroll");
+	document.body.classList.remove("not-scroll");
 }
 
 function handleSubmit(event) {
@@ -279,7 +356,7 @@ function handleSubmit(event) {
 			errorParagraph.classList.remove("error-displayed")
 		});
 
-		closeContectModal();
+		closeConnectModal();
 		return;
 	} else {
 		iziToast.error({
@@ -293,19 +370,41 @@ function handleSubmit(event) {
 	}
 }
 
-footerActionButton.addEventListener("click", openContectModal);
-modalActionCrossButton.addEventListener("click", closeContectModal);
-modalFormButton.addEventListener("click", (event) => handleSubmit(event));
+footerActionButton.addEventListener("click", openConnectModal);
+modalActionCrossButton.addEventListener("click", closeConnectModal);
+modalFormButton.addEventListener("click", () => handleSubmit);
 
-const headerNavList = document.querySelector(".header-nav-list");
-const burgerMenu = document.querySelector(".burger-menu");
-const headerModalOverlay = document.querySelector(".header-modal-overlay");
-const logo = document.querySelector(".logo");
 
-burgerMenu.addEventListener("click", function () {
-	burgerMenu.classList.toggle("open-burger");
-	logo.classList.toggle("open-burger");
-	headerModalOverlay.classList.toggle("active");
 
-	document.body.classList.toggle("not-scroll");
-})
+
+
+
+
+
+
+
+
+
+
+function handleBackdropClick(event) {
+	console.log(1)
+	if (event.target === event.currentTarget) {
+		closeModal();
+		closeConnectModal();
+
+		document.body.classList.remove("not-scroll");
+	}
+}
+
+const handleKeyDown = (event) => {
+	if (event.key === "Escape") {
+		closeModal();
+		closeConnectModal();
+
+		document.body.classList.remove("not-scroll");
+	}
+};
+
+modalOverlay.addEventListener("click", handleBackdropClick)
+modalFormOverlay.addEventListener("click", handleBackdropClick)
+document.addEventListener("keydown", handleKeyDown);
