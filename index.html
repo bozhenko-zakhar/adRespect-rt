@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="Projektowanie nowoczesnych ogrodów, wizualizacje 3D oraz kompleksowa realizacja terenów zielonych.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -11,7 +13,7 @@
 		rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="stylesheet" href="./src/style.css">
-	<title>adrespect-rt</title>
+	<title>GiardDesign</title>
 </head>
 
 <body>
@@ -19,7 +21,7 @@
 		<div class="upper-container">
 			<nav class="flex justify-between items-center relative py-6 w-full"> <!-- header-nav -->
 				<a class="header-nav-logo z-2 flex" href="./index.html">
-					<svg class="fill-primary w-[114px] h-[19px]"> <!-- header-nav-logo-icon -->
+					<svg aria-label="Logo icon" class="fill-primary w-[114px] h-[19px]"> <!-- header-nav-logo-icon -->
 						<use href="/icons/giarddesign.svg"></use>
 					</svg>
 				</a>
@@ -30,7 +32,7 @@
 							<a class="flex items-center gap-[5px] font-inter font-normal leading-normal tracking-[-0.01em] text-primary text-nowrap"
 								href="#offer"> <!-- header-nav-link header-nav-link-details -->
 								Oferta
-								<svg class="fill-primary w-3 h-3"> <!-- details-icon -->
+								<svg aria-label="hidden" class="fill-primary w-3 h-3"> <!-- details-icon -->
 									<use href="/icons/details.svg"></use>
 								</svg>
 							</a>
@@ -39,21 +41,21 @@
 								<a class="flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary"
 									href="#offer"> <!-- dropdown-link -->
 									Projekty
-									<svg class="w-4 h-4"> <!-- dropdown-icon -->
+									<svg aria-label="hidden" class="w-4 h-4"> <!-- dropdown-icon -->
 										<use href="/icons/arrow-right.svg"></use>
 									</svg>
 								</a>
 								<a class="flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary"
 									href="#offer"> <!-- dropdown-link -->
 									Wizualizacje
-									<svg class="w-4 h-4"> <!-- dropdown-icon -->
+									<svg aria-label="hidden" class="w-4 h-4"> <!-- dropdown-icon -->
 										<use href="/icons/arrow-right.svg"></use>
 									</svg>
 								</a>
 								<a class="flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary"
 									href="#offer"> <!-- dropdown-link -->
 									Realizacje
-									<svg class="w-4 h-4"> <!-- dropdown-icon -->
+									<svg aria-label="hidden" class="w-4 h-4"> <!-- dropdown-icon -->
 										<use href="/icons/arrow-right.svg"></use>
 									</svg>
 								</a>
@@ -77,9 +79,10 @@
 						<input type="text"
 							class="search-input search-open absolute top-1/2 -right-[10px] -translate-y-1/2 block pl-4 pr-10 w-[105%] h-8 border border-cream rounded-[200px] font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-primary transition-[width,height,border] duration-150 ease-in-out tablet:w-[480px] bg-white">
 
-						<button type="button"
+						<button type="button" aria-label="Toggle search input"
 							class="search-button relative right-0 bg-transparent border-0 flex justify-center items-center w-6 h-6 transition-[right] duration-300 ease-in-out cursor-pointer">
-							<svg class="search-icon search-open fill-transparent transition-[fill] w-6 h-6 duration-300 ease-out">
+							<svg aria-label="hidden"
+								class="search-icon search-open fill-transparent transition-[fill] w-6 h-6 duration-300 ease-out">
 								<use href="/icons/search.svg"></use>
 							</svg>
 
@@ -92,7 +95,8 @@
 						</button>
 					</form>
 
-					<button class="burger-menu z-3 h-6 w-6 bg-transparent border-0 relative tablet:hidden cursor-pointer">
+					<button type="button" aria-label="Toggle burger menu"
+						class="burger-menu z-3 h-6 w-6 bg-transparent border-0 relative tablet:hidden cursor-pointer">
 						<span
 							class="burger-menu-1 h-[1.5px] w-full bg-primary rounded-[25px] absolute top-1/5 left-1/2 -translate-1/2 transition-[transform,top,opacity] duration-300"></span>
 						<span
@@ -104,7 +108,7 @@
 			</nav>
 		</div>
 
-		<div
+		<div aria-modal="true"
 			class="header-modal-overlay fixed top-0 left-[768px] w-full h-full z-2 flex flex-col items-center bg-white transition-[left] duration-300 tablet:hidden">
 			<div class="relative w-full top-24"> <!-- header-modal-container -->
 				<div class="upper-container">
@@ -114,7 +118,7 @@
 								<a class="flex items-center gap-[5px] font-inter font-medium text-base leading-[-0.05em] no-underline text-primary"
 									href="#offer"> <!-- header-modal-nav-link header-nav-link-details -->
 									Oferta
-									<svg class="fill-primary w-3 h-3"> <!-- header-modal-details-icon -->
+									<svg aria-label="hidden" class="fill-primary w-3 h-3"> <!-- header-modal-details-icon -->
 										<use href="/icons/details.svg"></use>
 									</svg>
 								</a>
@@ -122,21 +126,21 @@
 									<a class="flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary"
 										href="#offer"> <!-- header-modal-link -->
 										Projekty
-										<svg class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
+										<svg aria-label="hidden" class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
 											<use href="/icons/arrow-right.svg"></use>
 										</svg>
 									</a>
 									<a class="flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary"
 										href="#offer"> <!-- header-modal-link -->
 										Wizualizacje
-										<svg class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
+										<svg aria-label="hidden" class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
 											<use href="/icons/arrow-right.svg"></use>
 										</svg>
 									</a>
 									<a class="flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary"
 										href="#offer"> <!-- header-modal-link -->
 										Realizacje
-										<svg class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
+										<svg aria-label="hidden" class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
 											<use href="/icons/arrow-right.svg"></use>
 										</svg>
 									</a>
@@ -169,15 +173,15 @@
 					<div
 						class="z-1 absolute bottom-1/2 right-1/2 translate-x-1/2 w-[calc(100%_-_30px)] flex justify-between bg-transparent desktop:gap-8 desktop:bottom-0 desktop:right-0 desktop:translate-x-0 desktop:py-6 desktop:px-8 desktop:w-auto desktop:justify-start desktop:bg-cream">
 						<!-- hero-image-buttons -->
-						<button
+						<button type="button" aria-label="Slide previous content"
 							class="hero-image-button z-1 bg-primary/30 border-0 rounded-full w-[72px] h-[72px] flex justify-center items-center desktop:bg-transparent desktop:rounded-none desktop:w-auto desktop:h-auto cursor-pointer">
-							<svg class="z-1 fill-cream w-12 h-12 desktop:fill-primary"> <!-- arrow-slide -->
+							<svg aria-label="hidden" class="z-1 fill-cream w-12 h-12 desktop:fill-primary"> <!-- arrow-slide -->
 								<use href="/icons/arrow-previous.svg"></use>
 							</svg>
 						</button>
-						<button
+						<button type="button" aria-label="Slide next content"
 							class="hero-image-button z-1 bg-primary/30 border-0 rounded-full w-[72px] h-[72px] flex justify-center items-center desktop:bg-transparent desktop:rounded-none desktop:w-auto desktop:h-auto cursor-pointer">
-							<svg class="z-1 fill-cream w-12 h-12 desktop:fill-primary"> <!-- arrow-slide -->
+							<svg aria-label="hidden" class="z-1 fill-cream w-12 h-12 desktop:fill-primary"> <!-- arrow-slide -->
 								<use href="/icons/arrow-next.svg"></use>
 							</svg>
 						</button>
@@ -186,7 +190,7 @@
 
 				<div class="relative desktop:w-[599px]"> <!-- hero-content -->
 					<h1
-						class="hero-heading flex flex-col font-montserrat font-medium text-4xl leading-[1.16667] text-cream mb-11 tablet:w-[500px] desktop:text-primary desktop:w-[599px] desktop:text-6xl">
+						class="hero-heading flex flex-col font-montserrat font-medium text-4xl leading-[1.16667] text-cream mb-11 tablet:w-[497px] desktop:text-primary desktop:text-6xl">
 						Nowoczesna aranżacja <span>Twojego ogrodu</span></h1>
 					<p
 						class="hero-info font-inter font-normal text-sm leading-normal text-cream mb-[72px] tablet:w-[438px] desktop:text-primary desktop:text-base">
@@ -205,7 +209,7 @@
 							<a class="flex items-center gap-2 font-inter font-normal text-sm leading-normal text-center text-green text-nowrap no-underline  desktop:text-base"
 								href="#projects"> <!-- hero-link-2 -->
 								Zobacz nasze realizacje
-								<svg class="fill-current w-4 h-4"> <!-- hero-details-icon -->
+								<svg aria-label="hidden" class="fill-current w-4 h-4"> <!-- hero-details-icon -->
 									<use href="/icons/arrow-down.svg"></use>
 								</svg>
 							</a>
@@ -232,7 +236,7 @@
 
 				<ul class="flex flex-col gap-10 tablet:items-center desktop:flex-row"> <!-- offer-list -->
 					<li class="flex flex-col w-full rounded-[28px] py-12 px-10 bg-white desktop:w-[378px]"> <!-- offer-item -->
-						<svg class="w-11 h-11 mb-8"> <!-- offer-icon-1 -->
+						<svg aria-label="hidden" class="w-11 h-11 mb-8"> <!-- offer-icon-1 -->
 							<use href="/icons/pencil.svg"></use>
 						</svg>
 
@@ -243,17 +247,17 @@
 							Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem
 							istniejącej przestrzeni.</p> <!-- offer-item-desc -->
 
-						<button
+						<button aria-label="Open offer modal"
 							class="offer-item-button flex items-center gap-[10px] w-fit h-7 border-0 border-b bg-transparent font-inter font-normal text-sm leading-normal text-center no-underline text-green cursor-pointer desktop:text-base"
 							type="button" data-number="0">
 							Dowiedz się więcej
-							<svg class="fill-current w-4 h-4"> <!-- offer-item-button-icon -->
+							<svg aria-label="hidden" class="fill-current w-4 h-4"> <!-- offer-item-button-icon -->
 								<use href="/icons/arrow-right.svg"></use>
 							</svg>
 						</button>
 					</li>
 					<li class="flex flex-col w-full rounded-[28px] py-12 px-10 bg-white desktop:w-[378px]">
-						<svg class="w-12 h-11 mb-8"> <!-- offer-icon-2 -->
+						<svg aria-label="hidden" class="w-12 h-11 mb-8"> <!-- offer-icon-2 -->
 							<use href="/icons/eye.svg"></use>
 						</svg>
 
@@ -264,17 +268,17 @@
 							Przedstawimy Ci projekty koncepcyjne  w postaci wirtualnego spaceru animowanego w
 							technologii 3D.</p>
 
-						<button
+						<button aria-label="Open offer modal"
 							class="offer-item-button flex items-center gap-[10px] w-fit h-7 border-0 border-b bg-transparent font-inter font-normal text-sm leading-normal text-center no-underline text-green cursor-pointer desktop:text-base"
 							type="button" data-number="1">
 							Dowiedz się więcej
-							<svg class="fill-current w-4 h-4">
+							<svg aria-label="hidden" class="fill-current w-4 h-4">
 								<use href="/icons/arrow-right.svg"></use>
 							</svg>
 						</button>
 					</li>
 					<li class="flex flex-col w-full rounded-[28px] py-12 px-10 bg-white desktop:w-[378px]">
-						<svg class="w-11 h-11 mb-8"> <!-- offer-icon-3 -->
+						<svg aria-label="hidden" class="w-11 h-11 mb-8"> <!-- offer-icon-3 -->
 							<use href="/icons/shine.svg"></use>
 						</svg>
 
@@ -285,11 +289,11 @@
 							Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych
 							technologii.</p>
 
-						<button
+						<button aria-label="Open offer modal"
 							class="offer-item-button flex items-center gap-[10px] w-fit h-7 border-0 border-b bg-transparent font-inter font-normal text-sm leading-normal text-center no-underline text-green cursor-pointer desktop:text-base"
 							type="button" data-number="2">
 							Dowiedz się więcej
-							<svg class="fill-current w-4 h-4">
+							<svg aria-label="hidden" class="fill-current w-4 h-4">
 								<use href="/icons/arrow-right.svg"></use>
 							</svg>
 						</button>
@@ -319,7 +323,7 @@
 					<a class="z-1 flex justify-center items-center gap-2 border border-cream rounded-[200px] h-[50px] font-normal text-sm leading-normal no-underline text-center text-cream tablet:w-[194px] desktop:text-base"
 						href="#instagram"> <!-- about-link -->
 						Poznaj nas bliżej
-						<svg class="fill-current w-4 h-4"> <!-- about-icon -->
+						<svg aria-label="hidden" class="fill-current w-4 h-4"> <!-- about-icon -->
 							<use href="/icons/arrow-right.svg"></use>
 						</svg>
 					</a>
@@ -341,13 +345,16 @@
 					<!-- h2 projects-heading, em projects-heading-emphasized -->
 				</div>
 
-				<ul class="projects-gallery gradient relative w-[320px] mx-auto tablet:w-[768px] desktop:w-[1440px]">
-					<li aria-label="przycinek «Rozwiń»"
-						class="projects-gradient-button absolute bottom-0 left-1/2 -translate-x-1/2 z-1 cursor-pointer flex justify-center items-center gap-2 border border-primary rounded-[200px] w-[123px] h-[50px] bg-transparent font-inter font-normal text-sm leading-normal text-center text-primary desktop:text-base">
-						Rozwiń
-						<svg class="fill-current w-4 h-4"> <!-- projects-gradient-icon -->
-							<use href="/icons/arrow-down.svg"></use>
-						</svg>
+				<ul aria-label="Gallery"
+					class="projects-gallery gradient relative w-[320px] mx-auto tablet:w-[768px] desktop:w-[1440px]">
+					<li>
+						<button aria-label="Przycinek «Rozwiń»"
+							class="projects-gradient-button absolute bottom-0 left-1/2 -translate-x-1/2 z-1 cursor-pointer flex justify-center items-center gap-2 border border-primary rounded-[200px] w-[123px] h-[50px] bg-transparent font-inter font-normal text-sm leading-normal text-center text-primary desktop:text-base">
+							Rozwiń
+							<svg aria-label="hidden" class="fill-current w-4 h-4"> <!-- projects-gradient-icon -->
+								<use href="/icons/arrow-down.svg"></use>
+							</svg>
+						</button>
 					</li>
 
 					<li class="projects-gallery-sizer"></li>
@@ -357,7 +364,8 @@
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/modern-concrete-staircase.webp 1x, /gallery/modern-concrete-staircase@2x.webp 2x"
 								src="/gallery/modern-concrete-staircase.webp"
-								alt="Modern concrete staircase surrounded by tropical plants" /> <!-- projects-gallery-image -->
+								alt="Modern concrete staircase surrounded by tropical plants" loading="lazy" decoding="async" />
+							<!-- projects-gallery-image -->
 						</a>
 					</li>
 					<li class="projects-gallery-item projects-gallery-item-small">
@@ -365,14 +373,16 @@
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/backyard-pergola-pool.webp 1x, /gallery/backyard-pergola-pool@2x.webp 2x"
 								src="/gallery/backyard-pergola-pool.webp"
-								alt="Contemporary backyard with a wooden pergola and swimming pool" /> <!-- projects-gallery-image -->
+								alt="Contemporary backyard with a wooden pergola and swimming pool" loading="lazy" decoding="async" />
+							<!-- projects-gallery-image -->
 						</a>
 					</li>
 					<li class="projects-gallery-item projects-gallery-item-medium">
 						<a class="glightbox" href="/glightbox/flowering-pergola-pathway.webp" data-gallery="projects">
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/flowering-pergola-pathway.webp 1x, /gallery/flowering-pergola-pathway@2x.webp 2x"
-								src="/gallery/flowering-pergola-pathway.webp" alt="Garden pathway beneath a flowering pergola" />
+								src="/gallery/flowering-pergola-pathway.webp" alt="Garden pathway beneath a flowering pergola"
+								loading="lazy" decoding="async" />
 							<!-- projects-gallery-image -->
 						</a>
 					</li>
@@ -380,7 +390,8 @@
 						<a class="glightbox" href="/glightbox/open-courtyard-pergolas.webp" data-gallery="projects">
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/open-courtyard-pergolas.webp 1x, /gallery/open-courtyard-pergolas@2x.webp 2x"
-								src="/gallery/open-courtyard-pergolas.webp" alt="Open courtyard with modern wooden pergolas" />
+								src="/gallery/open-courtyard-pergolas.webp" alt="Open courtyard with modern wooden pergolas"
+								loading="lazy" decoding="async" />
 							<!-- projects-gallery-image -->
 						</a>
 					</li>
@@ -388,7 +399,8 @@
 						<a class="glightbox" href="/glightbox/peaceful-koi-pond.webp" data-gallery="projects">
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/peaceful-koi-pond.webp 1x, /gallery/peaceful-koi-pond@2x.webp 2x"
-								src="/gallery/peaceful-koi-pond.webp" alt="Peaceful koi pond with natural landscaping" />
+								src="/gallery/peaceful-koi-pond.webp" alt="Peaceful koi pond with natural landscaping" loading="lazy"
+								decoding="async" />
 							<!-- projects-gallery-image -->
 						</a>
 					</li>
@@ -396,7 +408,8 @@
 						<a class="glightbox" href="/glightbox/tropical-garden-pathway.webp" data-gallery="projects">
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/tropical-garden-pathway.webp 1x, /gallery/tropical-garden-pathway@2x.webp 2x"
-								src="/gallery/tropical-garden-pathway.webp" alt="Curved stone pathway through a tropical garden" />
+								src="/gallery/tropical-garden-pathway.webp" alt="Curved stone pathway through a tropical garden"
+								loading="lazy" decoding="async" />
 							<!-- projects-gallery-image -->
 						</a>
 					</li>
@@ -404,7 +417,8 @@
 						<a class="glightbox" href="/glightbox/spiral-staircase-greenery.webp" data-gallery="projects">
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/spiral-staircase-greenery.webp 1x, /gallery/spiral-staircase-greenery@2x.webp 2x"
-								src="/gallery/spiral-staircase-greenery.webp" alt="Modern spiral staircase with indoor greenery" />
+								src="/gallery/spiral-staircase-greenery.webp" alt="Modern spiral staircase with indoor greenery"
+								loading="lazy" decoding="async" />
 							<!-- projects-gallery-image -->
 						</a>
 					</li>
@@ -412,7 +426,8 @@
 						<a class="glightbox" href="/glightbox/wooden-deck-pergola.webp" data-gallery="projects">
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/wooden-deck-pergola.webp 1x, /gallery/wooden-deck-pergola@2x.webp 2x"
-								src="/gallery/wooden-deck-pergola.webp" alt="Wooden deck with a contemporary garden pergola" />
+								src="/gallery/wooden-deck-pergola.webp" alt="Wooden deck with a contemporary garden pergola"
+								loading="lazy" decoding="async" />
 							<!-- projects-gallery-image -->
 						</a>
 					</li>
@@ -420,7 +435,8 @@
 						<a class="glightbox" href="/glightbox/wooden-pergola-detail.webp" data-gallery="projects">
 							<img class="w-full h-full object-cover"
 								srcset="/gallery/wooden-pergola-detail.webp 1x, /gallery/wooden-pergola-detail@2x.webp 2x"
-								src="/gallery/wooden-pergola-detail.webp" alt="Architectural view beneath a wooden pergola" />
+								src="/gallery/wooden-pergola-detail.webp" alt="Architectural view beneath a wooden pergola"
+								loading="lazy" decoding="async" />
 							<!-- projects-gallery-image -->
 						</a>
 					</li>
@@ -443,7 +459,8 @@
 							class="font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-cream tablet:text-left desktop:text-base">
 							Śledź nasze najnowsze realizacje!</p> <!-- instagram-reference-text -->
 						<a class="flex justify-center items-center rounded-[200px] w-full h-[46px] bg-cream font-inter font-normal text-sm leading-normal text-center no-underline text-green tablet:w-[124px] desktop:text-base"
-							href="https://www.instagram.com/" target="_blank">Instagram</a> <!-- instagram-reference-link -->
+							href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+						<!-- instagram-reference-link -->
 					</div>
 				</div>
 			</div>
@@ -458,7 +475,7 @@
 						class="flex flex-col justify-between items-center gap-[62px] tablet:items-start desktop:flex-row desktop:justify-between desktop:items-center">
 						<!-- footer-contact-1 -->
 						<a class="flex" href="./index.html"> <!-- footer-logo -->
-							<svg class="fill-cream w-[114px] h-[19px]"> <!-- footer-logo-icon -->
+							<svg aria-label="hidden" class="fill-cream w-[114px] h-[19px]"> <!-- footer-logo-icon -->
 								<use href="/icons/giarddesign.svg"></use>
 							</svg>
 						</a>
@@ -470,7 +487,7 @@
 								Daj
 								znać, co możemy
 								dla Ciebie zrobić!</p> <!-- footer-action-text -->
-							<button
+							<button type="button" aria-label="Open contact application"
 								class="footer-action-button flex justify-center items-center border-0 rounded-[200px] w-full h-[50px] bg-green font-inter font-normal text-sm leading-normal text-center text-cream tablet:w-[208px] desktop:text-base">Skontaktuj
 								się z nami</button>
 						</div>
@@ -483,19 +500,22 @@
 							<ul class="flex flex-col gap-8 tablet:flex-row desktop:gap-12"> <!-- footer-nav-list -->
 								<li class="text-center h-[21px]"> <!-- footer-nav-item -->
 									<a class="font-inter font-normal text-sm leading-normal tracking-[-0.01em] no-underline text-cream"
-										href="#contact" target="_blank">Kontakt</a> <!-- footer-nav-link -->
+										href="#contact" target="_blank" rel="noopener noreferrer">Kontakt</a> <!-- footer-nav-link -->
 								</li>
 								<li class="text-center h-[21px]"> <!-- footer-nav-item -->
 									<a class="font-inter font-normal text-sm leading-normal tracking-[-0.01em] no-underline text-cream"
-										href="https://www.instagram.com" target="_blank">Instagram</a> <!-- footer-nav-link -->
+										href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+									<!-- footer-nav-link -->
 								</li>
 								<li class="text-center h-[21px]"> <!-- footer-nav-item -->
 									<a class="font-inter font-normal text-sm leading-normal tracking-[-0.01em] no-underline text-cream"
-										href="https://www.facebook.com" target="_blank">Facebook</a> <!-- footer-nav-link -->
+										href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+									<!-- footer-nav-link -->
 								</li>
 								<li class="text-center h-[21px]"> <!-- footer-nav-item -->
 									<a class="font-inter font-normal text-sm leading-normal tracking-[-0.01em] no-underline text-cream"
-										href="https://www.linkedin.com" target="_blank">LinkedIn</a> <!-- footer-nav-link -->
+										href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+									<!-- footer-nav-link -->
 								</li>
 							</ul>
 						</nav>
@@ -526,8 +546,8 @@
 						class="flex justify-center items-center gap-4 font-inter font-normal text-sm tracking-[-0.01em] text-cream tablet:w-auto desktop:text-base">
 						<!-- footer-adrespect -->
 						made by
-						<a href="https://www.adrespect.pl" target="_blank">
-							<svg class="w-[113px] h-[23px]"> <!-- footer-adrespect-icon -->
+						<a href="https://www.adrespect.pl" target="_blank" rel="noopener noreferrer">
+							<svg aria-label="adRespect icon" class="w-[113px] h-[23px]"> <!-- footer-adrespect-icon -->
 								<use href="/icons/adRespect.svg"></use>
 							</svg>
 						</a>
@@ -537,27 +557,30 @@
 		</div>
 	</footer>
 
-	<div
+	<div aria-modal="true" aria-labelledby="modal-title"
 		class="modal-overlay fixed inset-0 p-8 w-full h-full flex justify-center z-10 opacity-0 pointer-events-none overflow-y-auto bg-[rgba(46,47,66,0.4)]">
 		<div
 			class="modal-container relative flex flex-col gap-8 rounded-[20px] bg-white w-[375px] h-fit py-16 px-8 tablet:flex-row tablet:items-start tablet:w-[768px] desktop:w-[1262px] desktop:p-16">
-			<div class="modal-cross-button absolute top-5 right-5 border-0 bg-transparent w-6 h-6 cursor-pointer">
+			<button type="button" aria-label="Close opened window"
+				class="modal-cross-button absolute top-5 right-5 border-0 bg-transparent w-6 h-6 cursor-pointer">
 				<span
 					class="absolute top-1/2 left-1/2 -translate-1/2 rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
 				<!-- modal-cross-1 -->
 				<span
 					class="absolute top-1/2 left-1/2 -translate-1/2 -rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
 				<!-- modal-cross-2 -->
-			</div>
+			</button>
 
 			<img class="modal-image w-full h-[250px] object-cover rounded-[20px] tablet:w-[calc(50%_-_16px)] tablet:h-[431px]"
-				src="/default-image.webp" alt="nothing shows">
+				src="/default-image.webp" alt="nothing shows" loading="lazy" decoding="async" />
+
 			<div class="relative w-full self-stretch tablet:w-1/2"> <!-- modal-info -->
 				<div class="flex items-center gap-1 mb-4 desktop:text-[32px]"> <!-- modal-title-container -->
-					<svg class="w-6 h-6"> <!-- plant-icon -->
+					<svg aria-label="hidden" class="w-6 h-6"> <!-- plant-icon -->
 						<use href="/icons/plant.svg"></use>
 					</svg>
-					<h2 class="modal-title font-montserrat font-medium text-2xl leading-[1.15] tracking-[-0.05em] text-primary">
+					<h2 id="modal-title"
+						class="modal-title font-montserrat font-medium text-2xl leading-[1.15] tracking-[-0.05em] text-primary">
 					</h2>
 				</div>
 
@@ -575,31 +598,32 @@
 
 				<ul class="modal-list flex flex-col gap-2 mb-6"></ul>
 
-				<button
+				<button type="button" aria-label="Open contact window"
 					class="modal-contact-button flex justify-center items-center border border-primary rounded-[200px] mx-auto w-full h-[50px] bg-transparent font-inter font-normal text-sm leading-normal text-center text-primary desktop:absolute desktop:bottom-0 desktop:mx-0 desktop:w-[242px] desktop:text-base">Skontaktuj
 					się</button>
 			</div>
 		</div>
 	</div>
 
-	<div
+	<div aria-label="true" aria-labelledby="modal-form-title"
 		class="modal-form-overlay fixed inset-0 p-8 w-full h-full flex justify-center z-10 opacity-0 pointer-events-none overflow-y-auto bg-[rgba(46,47,66,0.4)]">
 		<div
 			class="modal-form-container relative flex flex-col gap-8 rounded-[20px] bg-white w-[375px] h-fit py-16 px-8 tablet:flex-row tablet:items-start tablet:w-[768px] desktop:w-[1262px] desktop:p-16">
-			<div class="modal-form-cross-button absolute top-5 right-5 border-0 bg-transparent w-6 h-6 cursor-pointer">
+			<button type="button" aria-label="Close opened window"
+				class="modal-form-cross-button absolute top-5 right-5 border-0 bg-transparent w-6 h-6 cursor-pointer">
 				<span
 					class="modal-form-cross-1 absolute top-1/2 left-1/2 -translate-1/2 rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
 				<span
 					class="modal-form-cross-2 absolute top-1/2 left-1/2 -translate-1/2 -rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
-			</div>
+			</button>
 
 			<img
 				class="modal-form-image w-full h-[250px] object-cover rounded-[20px] tablet:w-[calc(50%_-_16px)] tablet:h-[431px]"
 				srcset="/customer-service.webp 1x, /customer-service@2x.webp 2x" src="/customer-service.webp"
-				alt="Człowiek nabliża się, trzymając tablet na ręce">
+				alt="Człowiek nabliża się, trzymając tablet na ręce" loading="lazy" decoding="async" />
 
 			<form class="modal-form w-full tablet:w-1/2">
-				<h2
+				<h2 id="modal-form-title"
 					class="font-montserrat font-medium text-[28px] leading-[1.15] tracking-[-0.05em] text-primary mb-1 desktop:text-[32px]">
 					Porozmawiajmy o Twoim ogrodzie</h2> <!-- modal-form-heading -->
 				<p class="font-inter font-normal text-base leading-normal tracking-[-0.01em] text-primary desktop:text-lg">
@@ -636,7 +660,7 @@
 					</div>
 				</div>
 
-				<button
+				<button type="submit" aria-label="Submit form"
 					class="modal-form-button flex justify-center items-center border border-primary rounded-[200px] mx-auto w-full h-[50px] bg-transparent font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-center text-primary desktop:mx-0 desktop:w-[242px] desktop:text-base">Wyślij</button>
 			</form>
 		</div>

@@ -10,7 +10,7 @@ import "izitoast/dist/css/iziToast.min.css";
 const gallery = document.querySelector('.projects-gallery');
 const lightbox = GLightbox({
 	selector: ".glightbox",
-});;
+});
 let msnry;
 
 imagesLoaded(gallery, function () {
