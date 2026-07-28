@@ -7,11 +7,11 @@ import "glightbox/dist/css/glightbox.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-var gallery = document.querySelector('.projects-gallery');
-var lightbox = GLightbox({
+const gallery = document.querySelector('.projects-gallery');
+const lightbox = GLightbox({
 	selector: ".glightbox",
 });;
-var msnry;
+let msnry;
 
 imagesLoaded(gallery, function () {
 	msnry = new Masonry(gallery, {
@@ -32,40 +32,30 @@ imagesLoaded(gallery, function () {
 
 
 
+const searchForm = document.querySelector(".search-form");
 const searchIcon = document.querySelector(".search-icon");
 const searchCross = document.querySelector(".search-cross");
 const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
 
 searchButton.addEventListener("click", function () {
+	searchForm.classList.toggle("search-open")
 	searchButton.classList.toggle("search-open")
 	searchIcon.classList.toggle("search-open");
 	searchCross.classList.toggle("search-open");
 	searchInput.classList.toggle("search-open");
 });
 
-
-
-
-
-
-
-
-
-
-
-
-const headerNavList = document.querySelector(".header-nav-list");
 const burgerMenu = document.querySelector(".burger-menu");
 const headerModalOverlay = document.querySelector(".header-modal-overlay");
 const logo = document.querySelector(".header-nav-logo");
 
 burgerMenu.addEventListener("click", function () {
-	burgerMenu.classList.toggle("open-burger");
-	logo.classList.toggle("open-burger");
+	burgerMenu.classList.toggle("open-my-burger");
+	logo.classList.toggle("open-my-burger");
 	headerModalOverlay.classList.toggle("header-modal-open");
 
-	document.body.classList.toggle("not-scroll");
+	document.body.classList.toggle("body-not-scroll");
 });
 
 
@@ -173,17 +163,17 @@ const projectsGradientButton = projectsGallery.querySelector(".projects-gradient
 function generateGalleryItems(items) {
 	return items.map(image => `
 		<li class="projects-gallery-item projects-gallery-item-${image.size}">
-			<a 
-				class="glightbox" 
+			<a
+				class="glightbox"
 				href="/glightbox/${image.imageName}.webp"
 				data-gallery="projects"
 			>
 				<img
-					class="projects-gallery-image"
+					class="w-full h-full object-cover"
 					srcset="/gallery/${image.imageName}.webp 1x, /gallery/${image.imageName}@2x.webp 2x"
 					src="/gallery/${image.imageName}.webp"
 					alt="${image.alt}"
-				>
+				/>
 			</a>
 		</li>
 	`).join("");
@@ -191,7 +181,8 @@ function generateGalleryItems(items) {
 
 projectsGradientButton.addEventListener("click", function () {
 	if (images.length) {
-		projectsGallery.insertAdjacentHTML("beforeend", generateGalleryItems(images.splice(-9)));
+		const nextImages = images.splice(images.length - 9);
+		projectsGallery.insertAdjacentHTML("beforeend", generateGalleryItems(nextImages));
 
 		imagesLoaded(projectsGallery, () => {
 			msnry.reloadItems();
@@ -280,7 +271,7 @@ const offerItemButtons = document.querySelectorAll(".offer-item-button");
 function generateFeatures(features) {
 	return (
 		features.map(feature =>
-			`<li class="modal-item">${feature}</li>`).join("")
+			`<li class="modal-item border border-green rounded-[200px] bg-transparent px-4 w-full font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-green desktop:w-fit desktop:base">${feature}</li>`).join("")
 	)
 }
 
@@ -295,12 +286,12 @@ function openModal(service) {
 	modalList.innerHTML = generateFeatures(service.features);
 
 	modalOverlay.classList.add("modal-open");
-	document.body.classList.add("not-scroll")
+	document.body.classList.add("body-not-scroll")
 }
 
 function closeModal() {
 	modalOverlay.classList.remove("modal-open");
-	document.body.classList.remove("not-scroll");
+	document.body.classList.remove("body-not-scroll");
 }
 
 modalCrossButton.addEventListener("click", closeModal);
@@ -335,12 +326,12 @@ const footerActionButton = document.querySelector(".footer-action-button");
 
 function openConnectModal() {
 	modalFormOverlay.classList.add("modal-open");
-	document.body.classList.add("not-scroll");
+	document.body.classList.add("body-not-scroll");
 }
 
 function closeConnectModal() {
 	modalFormOverlay.classList.remove("modal-open");
-	document.body.classList.remove("not-scroll");
+	document.body.classList.remove("body-not-scroll");
 }
 
 function handleSubmit(event) {
@@ -372,7 +363,7 @@ function handleSubmit(event) {
 
 footerActionButton.addEventListener("click", openConnectModal);
 modalActionCrossButton.addEventListener("click", closeConnectModal);
-modalFormButton.addEventListener("click", () => handleSubmit);
+modalFormButton.addEventListener("click", handleSubmit);
 
 
 
@@ -387,12 +378,11 @@ modalFormButton.addEventListener("click", () => handleSubmit);
 
 
 function handleBackdropClick(event) {
-	console.log(1)
 	if (event.target === event.currentTarget) {
 		closeModal();
 		closeConnectModal();
 
-		document.body.classList.remove("not-scroll");
+		document.body.classList.remove("body-not-scroll");
 	}
 }
 
@@ -401,7 +391,7 @@ const handleKeyDown = (event) => {
 		closeModal();
 		closeConnectModal();
 
-		document.body.classList.remove("not-scroll");
+		document.body.classList.remove("body-not-scroll");
 	}
 };
 
