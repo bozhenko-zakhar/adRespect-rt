@@ -14,6 +14,15 @@
 	--font-montserrat: "Montserrat", sans-serif;
 }
 
+@layer utilities {
+	.default-text {
+		font-family: "Inter", sans-serif;
+		font-weight: 400;
+		line-height: 1.5;
+		letter-spacing: -0.01em;
+	}
+}
+
 body.body-not-scroll {
 	overflow: hidden;
 }
@@ -147,7 +156,7 @@ body.body-not-scroll {
 	object-fit: cover;
 }
 
-.projects-gallery.gradient::after {
+.projects-gallery-wrapper.gradient::after {
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -219,9 +228,25 @@ body.body-not-scroll {
 .modal-overlay.modal-open,
 .modal-form-overlay.modal-open {
 	opacity: 1;
+	visibility: visible;
 	pointer-events: auto;
 }
 
-.modal-form-error.modal-form-invalid {
+.modal-form-error.error-displayed {
 	display: block;
+}
+
+
+
+
+
+
+.projects-gallery-wrapper {
+	overflow: hidden;
+	transition: height .6s cubic-bezier(.22, 1, .36, 1);
+
+}
+
+.projects-gallery {
+	/* height: 1000px !important; */
 }

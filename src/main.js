@@ -7,6 +7,8 @@ import "glightbox/dist/css/glightbox.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
+import "./animations.css"
+
 const gallery = document.querySelector('.projects-gallery');
 const lightbox = GLightbox({
 	selector: ".glightbox",
@@ -20,6 +22,28 @@ imagesLoaded(gallery, function () {
 		gutter: 42,
 		horizontalOrder: true,
 	});
+});
+
+const animatedElements = document.querySelectorAll(".animation-appearing");
+
+const observer = new IntersectionObserver(
+	(entries) => {
+		entries.forEach(entry => {
+			if (!entry.isIntersecting) return;
+
+			entry.target.classList.add("is-visible");
+
+			observer.unobserve(entry.target);
+		});
+	},
+	{
+		threshold: 0.5,
+		rootMargin: "0px",
+	}
+);
+
+animatedElements.forEach(element => {
+	observer.observe(element);
 });
 
 
@@ -133,71 +157,45 @@ buttonNext.addEventListener("click", function () {
 
 
 
+function getGalleryHeights() {
+	if (window.innerWidth >= 1440) {
+		return 1475
+	}
 
+	if (window.innerWidth >= 768) {
+		return 2580
+	}
 
-
-const images = [
-	{ imageName: "architectural-courtyard", alt: "Modern landscaped courtyard", size: "large" },
-	{ imageName: "bamboo-garden-architecture", alt: "Bamboo garden with contemporary landscaping", size: "small" },
-	{ imageName: "contemporary-pergola", alt: "Contemporary wooden pergola", size: "medium" },
-	{ imageName: "flower-arch-garden", alt: "Garden pathway beneath a flowering arch", size: "medium" },
-	{ imageName: "indoor-tropical-courtyard", alt: "Indoor tropical courtyard filled with lush greenery", size: "medium" },
-	{ imageName: "koi-pond-garden", alt: "Peaceful koi pond surrounded by garden plants", size: "large" },
-	{ imageName: "luxury-villa courtyard", alt: "Modern villa courtyard with landscaped garden", size: "small" },
-	{ imageName: "luxury-pool-villa", alt: "Contemporary villa with an outdoor swimming pool", size: "large" },
-	{ imageName: "minimalist-landscape-architecture", alt: "Minimalist landscape garden design", size: "small" },
-	{ imageName: "modern-botanical-garden", alt: "Modern botanical garden with diverse plants", size: "large" },
-	{ imageName: "modern-patio-tropical", alt: "Tropical patio with modern outdoor design", size: "small" },
-	{ imageName: "reflection-pool-architecture", alt: "Reflecting pool beside contemporary architecture", size: "medium" },
-	{ imageName: "tropical-landscaping", alt: "Lush tropical garden landscaping", size: "medium" },
-	{ imageName: "tropical-modern-garden", alt: "Modern tropical garden with natural greenery", size: "medium" },
-	{ imageName: "tropical-pathway", alt: "Stone pathway through a tropical garden", size: "large" },
-	{ imageName: "wooden-deck-garden", alt: "Wooden deck overlooking a landscaped garden", size: "small" },
-	{ imageName: "wooden-pergola-architecture", alt: "Modern wooden pergola in a landscaped garden", size: "large" },
-	{ imageName: "zen-water-garden", alt: "Zen garden with a peaceful water feature", size: "small" },
-];
-
-const projectsGallery = document.querySelector(".projects-gallery");
-const projectsGradientButton = projectsGallery.querySelector(".projects-gradient-button");
-
-function generateGalleryItems(items) {
-	return items.map(image => `
-		<li class="projects-gallery-item projects-gallery-item-${image.size}">
-			<a
-				class="glightbox"
-				href="/glightbox/${image.imageName}.webp"
-				data-gallery="projects"
-			>
-				<img
-					class="w-full h-full object-cover"
-					srcset="/gallery/${image.imageName}.webp 1x, /gallery/${image.imageName}@2x.webp 2x"
-					src="/gallery/${image.imageName}.webp"
-					alt="${image.alt}"
-				/>
-			</a>
-		</li>
-	`).join("");
+	return 4509
 }
 
-projectsGradientButton.addEventListener("click", function () {
-	if (images.length) {
-		const nextImages = images.splice(images.length - 9);
-		projectsGallery.insertAdjacentHTML("beforeend", generateGalleryItems(nextImages));
+function updateWrapperHeight() {
+	const galleryHeights = getGalleryHeights();
 
-		imagesLoaded(projectsGallery, () => {
-			msnry.reloadItems();
-			msnry.layout();
+	wrapper.style.height = `${(galleryHeights * expandCounter) + (42 * expandCounter)}px`;
+}
 
-			lightbox.reload();
-		});
+const wrapper = document.querySelector(".projects-gallery-wrapper");
+const projectsGradientButton = document.querySelector(".projects-gradient-button");
+let expandCounter = 1;
 
-		if (!images.length) {
-			projectsGradientButton.remove();
-			projectsGallery.classList.remove("gradient");
-		}
+projectsGradientButton.addEventListener("click", () => {
+	expandCounter++;
+
+	const galleryHeights = getGalleryHeights();
+
+	wrapper.style.height = `${(galleryHeights * expandCounter) + (42 * expandCounter)}px`;
+
+	if (expandCounter == 3) {
+		projectsGradientButton.remove();
+		wrapper.classList.remove("gradient");
+		return;
 	}
 });
 
+updateWrapperHeight();
+
+window.addEventListener("resize", updateWrapperHeight);
 
 
 
@@ -266,7 +264,7 @@ const modalDescription = modalContainer.querySelector(".modal-description");
 const modalFeaturesTitle = modalContainer.querySelector(".modal-features-title");
 const modalList = modalContainer.querySelector(".modal-list");
 
-const offerItemButtons = document.querySelectorAll(".offer-item-button");
+const offerItems = document.querySelectorAll(".offer-item");
 
 function generateFeatures(features) {
 	return (
@@ -300,9 +298,9 @@ modalContactButton.addEventListener("click", () => {
 	openConnectModal();
 })
 
-offerItemButtons.forEach(button => {
-	button.addEventListener("click", function () {
-		openModal(modalData[+button.dataset.number]);
+offerItems.forEach(item => {
+	item.addEventListener("click", function () {
+		openModal(modalData[+item.dataset.number]);
 	});
 });
 
@@ -332,6 +330,10 @@ function openConnectModal() {
 function closeConnectModal() {
 	modalFormOverlay.classList.remove("modal-open");
 	document.body.classList.remove("body-not-scroll");
+
+	modalFormErrors.forEach(errorParagraph => {
+		errorParagraph.classList.remove("error-displayed")
+	});
 }
 
 function handleSubmit(event) {
@@ -346,6 +348,8 @@ function handleSubmit(event) {
 		modalFormErrors.forEach(errorParagraph => {
 			errorParagraph.classList.remove("error-displayed")
 		});
+
+		modalForm.reset();
 
 		closeConnectModal();
 		return;
