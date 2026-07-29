@@ -105,16 +105,21 @@
 
 
 .animation-arrow-right,
-.animation-arrow-down {
+.animation-arrow-down,
+.animation-arrow-left {
 	transition: transform 300ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .arrow-group:active .animation-arrow-right {
-	transform: translateX(6px);
+	transform: translateX(4px);
+}
+
+.arrow-group:active .animation-arrow-left {
+	transform: translateX(-4px);
 }
 
 .arrow-group:active .animation-arrow-down {
-	transform: translateY(6px);
+	transform: translateY(4px);
 }
 
 
@@ -218,4 +223,30 @@
 
 .delay-400 {
 	transition-delay: 400ms;
+}
+
+
+.hero-content {
+	opacity: 1;
+	transform: translateY(0);
+
+	transition:
+		opacity .35s cubic-bezier(.22, 1, .36, 1),
+		transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.hero-image {
+	opacity: 1;
+
+	transition:
+		opacity .35s cubic-bezier(.22, 1, .36, 1)
+}
+
+#hero.is-changing .hero-content {
+	opacity: 0;
+	transform: translateY(-12px);
+}
+
+#hero.is-changing .hero-image {
+	opacity: 0;
 }

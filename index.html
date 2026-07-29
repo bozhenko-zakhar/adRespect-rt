@@ -38,28 +38,31 @@
 								</svg>
 							</a>
 							<div
-								class="dropdown-content group-hover:flex absolute top-5 left-0 hidden flex-col gap-4 border border-cream border-t-0 border-l-0 rounded-bl-[20px] rounded-br-[20px] py-10 px-12 bg-white">
-								<a class="dropdown-link relative flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary"
-									href="#offer"> <!-- dropdown-link -->
+								class="dropdown-content group-hover:opacity-100 group-hover:top-5 group-hover:pointer-events-auto pointer-events-none absolute opacity-0 -top-5 left-0 flex flex-col gap-4 border border-cream border-t-0 border-l-0 rounded-bl-[20px] rounded-br-[20px] py-10 px-12 bg-white transition-[opapcity,top]">
+								<button data-offer="0"
+									class="dropdown-link cursor-pointer relative flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary">
+									<!-- dropdown-link -->
 									Projekty
 									<svg aria-label="hidden" class="w-4 h-4"> <!-- dropdown-icon -->
 										<use href="/icons/arrow-right.svg"></use>
 									</svg>
-								</a>
-								<a class="dropdown-link relative flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary"
-									href="#offer"> <!-- dropdown-link -->
+								</button>
+								<button data-offer="1"
+									class="dropdown-link cursor-pointer relative flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary">
+									<!-- dropdown-link -->
 									Wizualizacje
 									<svg aria-label="hidden" class="w-4 h-4"> <!-- dropdown-icon -->
 										<use href="/icons/arrow-right.svg"></use>
 									</svg>
-								</a>
-								<a class="dropdown-link relative flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary"
-									href="#offer"> <!-- dropdown-link -->
+								</button>
+								<button data-offer="2"
+									class="dropdown-link cursor-pointer relative flex justify-between items-center gap-4 font-inter font-normal text-sm leading-normal text-center no-underline tracking-[-0.01em] text-primary">
+									<!-- dropdown-link -->
 									Realizacje
 									<svg aria-label="hidden" class="w-4 h-4"> <!-- dropdown-icon -->
 										<use href="/icons/arrow-right.svg"></use>
 									</svg>
-								</a>
+								</button>
 							</div>
 						</li>
 						<li class="header-nav-item relative z-1 group"> <!-- header-nav-item -->
@@ -116,36 +119,36 @@
 					<nav class=""> <!-- header-modal-nav -->
 						<ul class="flex flex-col gap-6"> <!-- header-modal-nav-list -->
 							<li class="header-modal-nav-item-details group"> <!-- header-modal-nav-item -->
-								<a class="header-modal-nav-link relative flex items-center gap-[5px] font-inter font-medium text-base leading-[-0.05em] no-underline text-primary"
+								<a
+									class="header-modal-nav-link cursor-pointer relative w-full flex items-center gap-[5px] font-inter font-medium text-base leading-[-0.05em] no-underline text-primary"
 									href="#offer"> <!-- header-modal-nav-link header-nav-link-details -->
 									Oferta
-									<svg aria-label="hidden" class="header-modal-details-icon fill-primary w-3 h-3">
-										<!-- header-modal-details-icon -->
-										<use href="/icons/details.svg"></use>
-									</svg>
 								</a>
-								<div class="group-hover:flex hidden flex-col gap-3 mt-4 mb-2"> <!-- header-modal-content -->
-									<a class="header-modal-link relative flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary"
-										href="#offer"> <!-- header-modal-link -->
+								<div class="group-hover:flex flex -left-100 flex-col gap-3 mt-4 mb-2"> <!-- header-modal-content -->
+									<button data-offer="0"
+										class="header-modal-link cursor-pointer relative flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary">
+										<!-- header-modal-link -->
 										Projekty
 										<svg aria-label="hidden" class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
 											<use href="/icons/arrow-right.svg"></use>
 										</svg>
-									</a>
-									<a class="header-modal-link relative flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary"
-										href="#offer"> <!-- header-modal-link -->
+									</button>
+									<button data-offer="1"
+										class="header-modal-link cursor-pointer relative flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary">
+										<!-- header-modal-link -->
 										Wizualizacje
 										<svg aria-label="hidden" class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
 											<use href="/icons/arrow-right.svg"></use>
 										</svg>
-									</a>
-									<a class="header-modal-link relative flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary"
-										href="#offer"> <!-- header-modal-link -->
+									</button>
+									<button data-offer="2"
+										class="header-modal-link cursor-pointer relative flex justify-between pl-3 font-inter font-normal text-base leading-normal tracking-[-0.05em] no-underline text-primary">
+										<!-- header-modal-link -->
 										Realizacje
 										<svg aria-label="hidden" class="fill-primary w-4 h-4"> <!-- header-modal-icon -->
 											<use href="/icons/arrow-right.svg"></use>
 										</svg>
-									</a>
+									</button>
 								</div>
 							</li>
 							<li class=""> <!-- header-modal-nav-item -->
@@ -172,26 +175,29 @@
 			<!-- hero-section -->
 			<div class="upper-container">
 				<div
-					class="hero-image image-0 absolute top-0 right-0 w-full h-full bg-center bg-no-repeat bg-cover desktop:w-[calc(50%_-_32px)] after:content-[''] after:absolute after:inset-0 after:bg-primary/40 after:pointer-events-none desktop:after:bg-transparent">
-					<div
-						class="z-1 absolute bottom-1/2 right-1/2 translate-x-1/2 w-[calc(100%_-_30px)] flex justify-between bg-transparent desktop:gap-8 desktop:bottom-0 desktop:right-0 desktop:translate-x-0 desktop:py-6 desktop:px-8 desktop:w-auto desktop:justify-start desktop:bg-cream">
-						<!-- hero-image-buttons -->
-						<button type="button" aria-label="Slide previous content"
-							class="hero-image-button animation-transition-default animation-hover-lift animation-active-press z-1 bg-primary/30 border-0 rounded-full w-[72px] h-[72px] flex justify-center items-center desktop:bg-transparent desktop:rounded-none desktop:w-auto desktop:h-auto cursor-pointer">
-							<svg aria-label="hidden" class="z-1 fill-cream w-12 h-12 desktop:fill-primary"> <!-- arrow-slide -->
-								<use href="/icons/arrow-previous.svg"></use>
-							</svg>
-						</button>
-						<button type="button" aria-label="Slide next content"
-							class="hero-image-button animation-transition-default animation-hover-lift animation-active-press z-1 bg-primary/30 border-0 rounded-full w-[72px] h-[72px] flex justify-center items-center desktop:bg-transparent desktop:rounded-none desktop:w-auto desktop:h-auto cursor-pointer">
-							<svg aria-label="hidden" class="z-1 fill-cream w-12 h-12 desktop:fill-primary"> <!-- arrow-slide -->
-								<use href="/icons/arrow-next.svg"></use>
-							</svg>
-						</button>
-					</div>
+					class="z-1 absolute bottom-1/2 right-1/2 translate-x-1/2 w-[calc(100%_-_30px)] flex justify-between bg-transparent desktop:gap-8 desktop:bottom-0 desktop:right-0 desktop:translate-x-0 desktop:py-6 desktop:px-8 desktop:w-auto desktop:justify-start desktop:bg-cream">
+					<!-- hero-image-buttons -->
+					<button type="button" aria-label="Slide previous content"
+						class="hero-image-button arrow-group animation-transition-default animation-hover-lift animation-active-press z-1 bg-primary/30 border-0 rounded-full w-[72px] h-[72px] flex justify-center items-center desktop:bg-transparent desktop:rounded-none desktop:w-auto desktop:h-auto cursor-pointer">
+						<svg aria-label="hidden" class="animation-arrow-left z-1 fill-cream w-12 h-12 desktop:fill-primary">
+							<!-- arrow-slide -->
+							<use href="/icons/arrow-previous.svg"></use>
+						</svg>
+					</button>
+					<button type="button" aria-label="Slide next content"
+						class="hero-image-button arrow-group animation-transition-default animation-hover-lift animation-active-press z-1 bg-primary/30 border-0 rounded-full w-[72px] h-[72px] flex justify-center items-center desktop:bg-transparent desktop:rounded-none desktop:w-auto desktop:h-auto cursor-pointer">
+						<svg aria-label="hidden" class="animation-arrow-right z-1 fill-cream w-12 h-12 desktop:fill-primary">
+							<!-- arrow-slide -->
+							<use href="/icons/arrow-next.svg"></use>
+						</svg>
+					</button>
 				</div>
 
-				<div class="relative desktop:w-[599px]"> <!-- hero-content -->
+				<div
+					class="hero-image image-0 absolute top-0 right-0 w-full h-full bg-center bg-no-repeat bg-cover desktop:w-[calc(50%_-_32px)] after:content-[''] after:absolute after:inset-0 after:bg-primary/40 after:pointer-events-none desktop:after:bg-transparent">
+				</div>
+
+				<div class="hero-content relative desktop:w-[599px]"> <!-- hero-content -->
 					<h1
 						class="hero-heading flex flex-col font-montserrat font-medium text-4xl leading-[1.16667] text-cream mb-11 tablet:w-[497px] desktop:text-primary desktop:text-6xl">
 						Nowoczesna aranżacja <span>Twojego ogrodu</span></h1>

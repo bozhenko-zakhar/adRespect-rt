@@ -73,6 +73,37 @@ searchButton.addEventListener("click", function () {
 const burgerMenu = document.querySelector(".burger-menu");
 const headerModalOverlay = document.querySelector(".header-modal-overlay");
 const logo = document.querySelector(".header-nav-logo");
+const headerModalNavLink = document.querySelectorAll(".header-modal-nav-link");
+const offerModalButtons = document.querySelectorAll(".header-modal-link");
+const offerButtons = document.querySelectorAll(".dropdown-link");
+
+headerModalNavLink.forEach(link => {
+	link.addEventListener("click", function () {
+		burgerMenu.classList.toggle("open-my-burger");
+		logo.classList.toggle("open-my-burger");
+		headerModalOverlay.classList.toggle("header-modal-open");
+
+		document.body.classList.remove("body-not-scroll");
+	})
+})
+
+offerButtons.forEach(button => {
+	button.addEventListener("click", function () {
+		burgerMenu.classList.toggle("open-my-burger");
+		logo.classList.toggle("open-my-burger");
+		headerModalOverlay.classList.toggle("header-modal-open");
+		openModal(modalData[+button.dataset.offer])
+	})
+});
+
+offerModalButtons.forEach(button => {
+	button.addEventListener("click", function () {
+		burgerMenu.classList.toggle("open-my-burger");
+		logo.classList.toggle("open-my-burger");
+		headerModalOverlay.classList.toggle("header-modal-open");
+		openModal(modalData[+button.dataset.offer])
+	})
+});
 
 burgerMenu.addEventListener("click", function () {
 	burgerMenu.classList.toggle("open-my-burger");
@@ -109,44 +140,63 @@ const slides = [
 	},
 ];
 
-const heroHeading = document.querySelector(".hero-heading")
-const heroInfo = document.querySelector(".hero-info")
-const heroImage = document.querySelector(".hero-image")
-const buttonPrevious = document.querySelectorAll(".hero-image-button")[0]
-const buttonNext = document.querySelectorAll(".hero-image-button")[1]
-
+const heroSection = document.querySelector("#hero");
+const heroHeading = document.querySelector(".hero-heading");
+const heroInfo = document.querySelector(".hero-info");
+const heroImage = document.querySelector(".hero-image");
+const [buttonPrevious, buttonNext] = document.querySelectorAll(".hero-image-button");
 let currentSlide = 0;
 
-function showSlide(slide) {
-	heroHeading.innerHTML = `${slide.title}`;
-	heroInfo.textContent = slide.description;
-	heroImage.classList.add(`image-${currentSlide}`);
+const delay = (ms) => {
+	return new Promise((resolve) => {
+		return setTimeout(resolve, ms)
+	});
 }
 
-buttonPrevious.addEventListener("click", function () {
-	currentSlide--;
+async function showSlide(direction) {
+	heroSection.classList.add("is-changing");
+
+	await delay(350);
+
+	currentSlide = direction === "previous" ? currentSlide - 1 : currentSlide + 1;
+
+	console.log(currentSlide)
 
 	if (currentSlide < 0) {
 		currentSlide = slides.length - 1;
 		heroImage.classList.remove("image-0");
-	} else {
-		heroImage.classList.remove(`image-${currentSlide + 1}`);
-	}
-
-	showSlide(slides[currentSlide])
-})
-
-buttonNext.addEventListener("click", function () {
-	currentSlide++;
-
-	if (currentSlide >= slides.length) {
+	} else if (currentSlide >= slides.length) {
 		currentSlide = 0;
 		heroImage.classList.remove("image-2");
 	} else {
-		heroImage.classList.remove(`image-${currentSlide - 1}`);
+		heroImage.classList.remove(`image-${direction === "previous" ? (currentSlide + 1) : (currentSlide - 1)}`);
 	}
 
-	showSlide(slides[currentSlide])
+	console.log(currentSlide)
+
+	heroHeading.innerHTML = slides[currentSlide].title;
+	heroInfo.textContent = slides[currentSlide].description;
+	heroImage.classList.add(`image-${currentSlide}`);
+
+	heroSection.classList.remove("is-changing");
+
+	await delay(350);
+}
+
+buttonPrevious.addEventListener("click", async function () {
+	buttonPrevious.disabled = true;
+
+	await showSlide("previous");
+
+	buttonPrevious.disabled = false;
+})
+
+buttonNext.addEventListener("click", async function () {
+	buttonNext.disabled = true;
+
+	await showSlide("next");
+
+	buttonNext.disabled = false;
 });
 
 

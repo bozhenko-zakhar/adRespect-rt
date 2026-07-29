@@ -23,6 +23,10 @@
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body.body-not-scroll {
 	overflow: hidden;
 }
