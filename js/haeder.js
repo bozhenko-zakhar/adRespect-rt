@@ -13,11 +13,13 @@ const dropdownOpenHandler = () => {
 }
 
 dropdownContentButton.addEventListener("click", function () {
-	dropdownOpenHandler()
+	dropdownIcon.classList.toggle("drop-open")
+	dropdownContent.classList.toggle("drop-open");
 });
 
 dropdownContentButton.addEventListener("blur", function () {
-	dropdownOpenHandler()
+	dropdownIcon.classList.remove("drop-open")
+	dropdownContent.classList.remove("drop-open");
 });
 
 
