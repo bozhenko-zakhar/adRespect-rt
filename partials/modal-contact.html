@@ -1,0 +1,59 @@
+<div aria-label="true" aria-labelledby="modal-form-title" class="modal-overlay modal-contact">
+	<div
+		class="modal-container relative flex flex-col gap-8 rounded-[20px] bg-white w-[375px] h-fit py-16 px-8 tablet:flex-row tablet:items-start tablet:w-[768px] desktop:w-[1262px] desktop:p-16">
+		<button type="button" aria-label="Close opened window"
+			class="modal-cross-button absolute top-5 right-5 border-0 bg-transparent w-6 h-6 cursor-pointer transition-transform">
+			<span
+				class="modal-form-cross-1 absolute top-1/2 left-1/2 -translate-1/2 rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
+			<span
+				class="modal-form-cross-2 absolute top-1/2 left-1/2 -translate-1/2 -rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
+		</button>
+
+		<img
+			class="modal-form-image w-full h-[250px] object-cover rounded-[20px] tablet:w-[calc(50%_-_16px)] tablet:h-auto flex self-stretch"
+			srcset="/customer-service.webp 1x, /customer-service@2x.webp 2x" src="/customer-service.webp"
+			alt="Człowiek nabliża się, trzymając tablet na ręce" loading="lazy" decoding="async" />
+
+		<form class="modal-form w-full tablet:w-1/2">
+			<h2 id="modal-form-title"
+				class="font-montserrat font-medium text-[28px] leading-[1.15] tracking-[-0.05em] text-primary mb-1 desktop:text-[32px]">
+				Porozmawiajmy o Twoim ogrodzie</h2> <!-- modal-form-heading -->
+			<p class="font-inter font-normal text-base leading-normal tracking-[-0.01em] text-primary desktop:text-lg">
+				Zostaw swoje dane, a
+				przygotujemy wstępną odpowiedź dopasowaną do Twoich
+				oczekiwań.</p> <!-- modal-form-paragraph -->
+
+			<div class="flex flex-col gap-6 my-8"> <!-- modal-form-inputs -->
+				<div class=""> <!-- modal-form-input -->
+					<input
+						class="block border border-[#1214171a] rounded-[12px] w-full h-[54px] py-4 pr-12 pl-4 font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-primary mb-1 desktop:text-base"
+						type="text" placeholder="Imię" minlength="2" required> <!-- modal-form-input -->
+					<p
+						class="modal-form-error hidden font-inter font-normal text-[12px] leading-normal tracking-[-0.01em] text-[#dd5555]">
+						Podaj imię</p> <!-- modal-form-error -->
+				</div>
+
+				<div class=""> <!-- modal-form-input-container -->
+					<input
+						class="block border border-[#1214171a] rounded-[12px] w-full h-[54px] py-4 pr-12 pl-4 font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-primary mb-1 desktop:text-base"
+						type="email" placeholder="E-mail" required> <!-- modal-form-input -->
+					<p
+						class="modal-form-error hidden font-inter font-normal text-[12px] leading-normal tracking-[-0.01em] text-[#dd5555]">
+						Podaj poprawny adres e-mail</p> <!-- modal-form-error -->
+				</div>
+
+				<div class=""> <!-- modal-form-input-container -->
+					<input
+						class="block border border-[#1214171a] rounded-[12px] w-full h-[54px] py-4 pr-12 pl-4 font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-primary mb-1 desktop:text-base"
+						type="text" placeholder="Telefon" pattern="\+?[1-9][0-9]{7,14}" required> <!-- modal-form-input -->
+					<p
+						class="modal-form-error hidden font-inter font-normal text-[12px] leading-normal tracking-[-0.01em] text-[#dd5555]">
+						Podaj poprawny numer telefonu</p> <!-- modal-form-error -->
+				</div>
+			</div>
+
+			<button type="submit" aria-label="Submit form"
+				class="modal-form-button animation-transition-default animation-hover-lift animation-active-press flex justify-center items-center border border-primary rounded-[200px] mx-auto w-full h-[50px] bg-transparent font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-center text-primary cursor-pointer desktop:mx-0 desktop:w-[242px] desktop:text-base">Wyślij</button>
+		</form>
+	</div>
+</div>

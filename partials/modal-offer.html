@@ -1,0 +1,52 @@
+<div aria-modal="true" aria-labelledby="modal-title"
+	class="modal-overlay modal-offer fixed inset-0 p-8 w-full h-full flex justify-center z-10 opacity-0 pointer-events-none overflow-y-auto bg-[rgba(46,47,66,0.4)]">
+	<div
+		class="modal-container relative flex flex-col gap-8 rounded-[20px] bg-white w-[375px] h-fit py-16 px-8 tablet:flex-row tablet:items-start tablet:w-[768px] desktop:w-[1262px] desktop:p-16">
+		<button type="button" aria-label="Close opened window"
+			class="modal-cross-button absolute top-5 right-5 border-0 bg-transparent w-6 h-6 cursor-pointer transition-transform">
+			<span
+				class="absolute top-1/2 left-1/2 -translate-1/2 rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
+			<!-- modal-cross-1 -->
+			<span
+				class="absolute top-1/2 left-1/2 -translate-1/2 -rotate-45 h-[2.5px] w-full bg-primary rounded-[25px]"></span>
+			<!-- modal-cross-2 -->
+		</button>
+
+		<img
+			class="modal-image w-full h-[250px] object-cover rounded-[20px] tablet:w-[calc(50%_-_16px)] tablet:h-auto flex self-stretch"
+			src="/default-image.webp" alt="nothing shows" loading="lazy" decoding="async" />
+
+		<div class="relative w-full self-stretch tablet:w-1/2"> <!-- modal-info -->
+			<div class="flex items-center gap-1 mb-4 desktop:text-[32px]"> <!-- modal-title-container -->
+				<svg aria-label="hidden" class="w-6 h-6"> <!-- plant-icon -->
+					<use href="/icons/plant.svg"></use>
+				</svg>
+				<h2 id="modal-title"
+					class="modal-title font-montserrat font-medium text-2xl leading-[1.15] tracking-[-0.05em] text-primary">
+				</h2>
+			</div>
+
+			<h3
+				class="modal-subtitle font-montserrat font-medium text-sm leading-normal tracking-[-0.01em] text-primary desktop:text-base">
+			</h3>
+
+			<p
+				class="modal-description modal-subtitle font-inter font-normal text-sm leading-normal tracking-[-0.01em] text-primary mb-4 desktop:text-base">
+			</p>
+
+			<h4
+				class="modal-features-title font-inter font-medium text-base leading-normal tracking-[-0.01em] text-primary mb-1 desktop:text-lg">
+			</h4>
+
+			<ul class="modal-list flex flex-col gap-2 mb-8"></ul>
+
+			<button type="button" aria-label="Open contact window"
+				class="modal-contact-button arrow-group animation-transition-default animation-hover-lift animation-active-press flex justify-center items-center self-end gap-[10px] border border-primary rounded-[200px] mx-auto w-full h-[50px] bg-transparent font-inter font-normal text-sm leading-normal text-center text-primary cursor-pointer desktop:absolute desktop:bottom-0 desktop:mx-0 desktop:w-[242px] desktop:text-base">Skontaktuj
+				się
+				<svg aria-label="hidden" class="animation-arrow-right fill-current w-4 h-4"> <!-- about-icon -->
+					<use href="/icons/arrow-right.svg"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
+</div>
