@@ -13,19 +13,19 @@ function getGalleryHeights() {
 function updateWrapperHeight() {
 	const galleryHeights = getGalleryHeights();
 
-	wrapper.style.height = `${(galleryHeights * expandCounter) + (42 * expandCounter)}px`;
+	wrapper.style.height = `${galleryHeights * expandCounter}px`;
 }
 
 const wrapper = document.querySelector(".projects-gallery-wrapper");
 const projectsGradientButton = document.querySelector(".projects-gradient-button");
-let expandCounter = 1;
+var expandCounter = 1;
 
 projectsGradientButton.addEventListener("click", () => {
 	expandCounter++;
 
 	const galleryHeights = getGalleryHeights();
 
-	wrapper.style.height = `${(galleryHeights * expandCounter) + (42 * expandCounter)}px`;
+	wrapper.style.height = `${(galleryHeights * expandCounter) + (42 * (expandCounter - 1))}px`;
 
 	if (expandCounter == 3) {
 		projectsGradientButton.remove();
