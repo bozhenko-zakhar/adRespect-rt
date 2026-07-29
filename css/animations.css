@@ -40,15 +40,6 @@
 		@apply opacity-100 scale-100 translate-y-0;
 	}
 
-	.animation-underline::after {
-		@apply content-[''] block absolute left-0 -bottom-1 w-full h-0.5 scale-x-0 origin-left bg-current transition-transform duration-300 ease-smooth
-	}
-
-	.animation-underline:hover::after,
-	.animation-underline:focus::after {
-		@apply scale-x-100
-	}
-
 	.hero-content {
 		@apply opacity-100 translate-y-0 transition-all duration-350 ease-smooth;
 	}
@@ -67,6 +58,29 @@
 
 	.modal-image {
 		@apply transition-opacity duration-300;
+	}
+
+	.dropdown-content.drop-open {
+		@apply opacity-100 top-5 pointer-events-auto
+	}
+
+	.offer-item {
+		@apply transition-all duration-350 ease-smooth;
+	}
+
+	.offer-item:hover,
+	.offer-item:focus {
+		@apply -translate-y-2 transition-transform;
+		box-shadow: 0 18px 40px rgb(0 0 0 / 12%);
+	}
+
+	.offer-item:active {
+		@apply scale-[.985];
+	}
+
+	.modal-cross-button:hover,
+	.modal-cross-button:focus {
+		@apply -rotate-90 scale-108 transition-all;
 	}
 }
 
@@ -109,20 +123,6 @@
 		@apply scale-x-[1];
 	}
 
-	.offer-item {
-		@apply transition-all duration-350 ease-smooth;
-	}
-
-	.offer-item:hover,
-	.offer-item:focus {
-		@apply -translate-y-2 transition-transform;
-		box-shadow: 0 18px 40px rgb(0 0 0 / 12%);
-	}
-
-	.offer-item:active {
-		@apply scale-[.985];
-	}
-
 	.animation-arrow-right,
 	.animation-arrow-down,
 	.animation-arrow-left {
@@ -151,22 +151,26 @@
 		@apply opacity-100 translate-0 scale-100
 	}
 
-	.modal-cross-button:hover,
-	.modal-cross-button:focus {
-		@apply -rotate-90 scale-108 transition-all;
+	.animation-underline::after {
+		@apply content-[''] block absolute left-0 -bottom-1 w-full h-0.5 scale-x-0 origin-left bg-current transition-transform duration-300 ease-smooth
+	}
+
+	.animation-underline:hover::after,
+	.animation-underline:focus::after {
+		@apply scale-x-100
 	}
 }
 
 
 
-.header-nav-item-details .details-icon,
-.header-modal-nav-item-details .header-modal-details-icon {
+.details-icon,
+.header-modal-details-icon {
 	transition: transform 2500ms cubic-bezier(.22, 1, .36, 1);
 }
 
-.header-nav-item-details:hover .details-icon,
-.header-modal-nav-item-details:hover .header-modal-details-icon,
-.header-nav-item-details:focus .details-icon,
-.header-modal-nav-item-details:focus .header-modal-details-icon {
+.details-icon.drop-open,
+.header-modal-details-icon.drop-open,
+.details-icon.drop-open,
+.header-modal-details-icon.drop-openn {
 	transform: translateY(1px) rotate(360deg);
 }

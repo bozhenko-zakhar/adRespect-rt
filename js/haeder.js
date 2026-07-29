@@ -1,5 +1,25 @@
 import { openOfferModal } from "./modal-offer";
-import { modalData } from "./data.js"
+import { modalData } from "./data.js";
+
+
+
+const dropdownContentButton = document.querySelector(".header-nav-link-details");
+const dropdownContent = document.querySelector(".dropdown-content");
+const dropdownIcon = document.querySelector(".details-icon");
+
+const dropdownOpenHandler = () => {
+	dropdownIcon.classList.toggle("drop-open")
+	dropdownContent.classList.toggle("drop-open");
+}
+
+dropdownContentButton.addEventListener("click", function () {
+	dropdownOpenHandler()
+});
+
+dropdownContentButton.addEventListener("blur", function () {
+	dropdownOpenHandler()
+});
+
 
 
 const searchForm = document.querySelector(".search-form");
@@ -9,11 +29,11 @@ const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
 
 searchButton.addEventListener("click", function () {
-  searchForm.classList.toggle("search-open")
-  searchButton.classList.toggle("search-open")
-  searchIcon.classList.toggle("search-open");
-  searchCross.classList.toggle("search-open");
-  searchInput.classList.toggle("search-open");
+	searchForm.classList.toggle("search-open")
+	searchButton.classList.toggle("search-open")
+	searchIcon.classList.toggle("search-open");
+	searchCross.classList.toggle("search-open");
+	searchInput.classList.toggle("search-open");
 });
 
 const burgerMenu = document.querySelector(".burger-menu");
@@ -24,38 +44,38 @@ const offerModalButtons = document.querySelectorAll(".header-modal-link");
 const offerButtons = document.querySelectorAll(".dropdown-link");
 
 headerModalNavLink.forEach(link => {
-  link.addEventListener("click", function () {
-    burgerMenu.classList.remove("open-my-burger");
-    logo.classList.remove("open-my-burger");
-    headerModalOverlay.classList.remove("header-modal-open");
+	link.addEventListener("click", function () {
+		burgerMenu.classList.remove("open-my-burger");
+		logo.classList.remove("open-my-burger");
+		headerModalOverlay.classList.remove("header-modal-open");
 
-    document.body.classList.remove("body-not-scroll");
-  })
+		document.body.classList.remove("body-not-scroll");
+	})
 })
 
 offerButtons.forEach(button => {
-  button.addEventListener("click", function () {
-    burgerMenu.classList.remove("open-my-burger");
-    logo.classList.remove("open-my-burger");
-    headerModalOverlay.classList.remove("header-modal-open");
-    openOfferModal(modalData[+button.dataset.offer])
-  })
+	button.addEventListener("click", function () {
+		burgerMenu.classList.remove("open-my-burger");
+		logo.classList.remove("open-my-burger");
+		headerModalOverlay.classList.remove("header-modal-open");
+		openOfferModal(modalData[+button.dataset.offer])
+	})
 });
 
 offerModalButtons.forEach(button => {
-  button.addEventListener("click", function () {
-    burgerMenu.classList.remove("open-my-burger");
-    logo.classList.remove("open-my-burger");
-    headerModalOverlay.classList.remove("header-modal-open");
+	button.addEventListener("click", function () {
+		burgerMenu.classList.remove("open-my-burger");
+		logo.classList.remove("open-my-burger");
+		headerModalOverlay.classList.remove("header-modal-open");
 
-    openOfferModal(modalData[+button.dataset.offer])
-  })
+		openOfferModal(modalData[+button.dataset.offer])
+	})
 });
 
 burgerMenu.addEventListener("click", function () {
-  burgerMenu.classList.toggle("open-my-burger");
-  logo.classList.toggle("open-my-burger");
-  headerModalOverlay.classList.toggle("header-modal-open");
+	burgerMenu.classList.toggle("open-my-burger");
+	logo.classList.toggle("open-my-burger");
+	headerModalOverlay.classList.toggle("header-modal-open");
 
-  document.body.classList.toggle("body-not-scroll");
+	document.body.classList.toggle("body-not-scroll");
 });
