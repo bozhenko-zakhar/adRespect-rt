@@ -302,7 +302,7 @@ const modalData = [
 	},
 ]
 
-const modalOverlay = document.querySelector(".modal-overlay");
+const modalOverlay = document.querySelector(".modal-offer");
 const modalContainer = modalOverlay.querySelector(".modal-container");
 const modalCrossButton = modalContainer.querySelector(".modal-cross-button");
 const modalContactButton = modalContainer.querySelector(".modal-contact-button");
@@ -364,12 +364,12 @@ offerItems.forEach(item => {
 
 
 
-const modalFormOverlay = document.querySelector(".modal-form-overlay");
+const modalFormOverlay = document.querySelector(".modal-contact");
 const modalForm = modalFormOverlay.querySelector(".modal-form");
 const modalFormButton = modalForm.querySelector(".modal-form-button");
 const modalFormErrors = modalForm.querySelectorAll(".modal-form-error");
 
-const modalActionCrossButton = document.querySelector(".modal-form-cross-button");
+const modalActionCrossButton = modalFormOverlay.querySelector(".modal-cross-button");
 const footerActionButton = document.querySelector(".footer-action-button");
 
 function openConnectModal() {
