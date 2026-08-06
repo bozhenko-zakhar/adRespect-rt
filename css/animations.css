@@ -151,7 +151,7 @@
 	}
 
 	.dropdown-content.drop-open {
-		@apply opacity-100 top-5 pointer-events-auto;
+		@apply opacity-100 top-12 pointer-events-auto;
 	}
 
 	.offer-item {

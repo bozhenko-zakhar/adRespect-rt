@@ -56,7 +56,7 @@ headerModalNavLink.forEach(link => {
 })
 
 offerButtons.forEach(button => {
-	button.addEventListener("click", function () {
+	button.addEventListener("mousedown", function () {
 		burgerMenu.classList.remove("open-my-burger");
 		logo.classList.remove("open-my-burger");
 		headerModalOverlay.classList.remove("header-modal-open");

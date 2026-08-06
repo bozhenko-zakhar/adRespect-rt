@@ -13,7 +13,7 @@ function getGalleryHeights() {
 function updateWrapperHeight() {
 	const galleryHeights = getGalleryHeights();
 
-	wrapper.style.height = `${galleryHeights * expandCounter}px`;
+	wrapper.style.height = `${(galleryHeights * expandCounter) + (42 * (expandCounter - 1))}px`;
 }
 
 const wrapper = document.querySelector(".projects-gallery-wrapper");
